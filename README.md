@@ -13,9 +13,6 @@
 
 ▶ **[Watch the 73-second tour](https://drive.google.com/file/d/1D73M2WlcavSW7R3fCN5Mn4xsDy1kizcg/view?usp=sharing)**: one idea goes from the CEO prompt to a tested game, with Jira and Confluence kept in sync.
 
-> [!WARNING]
-> **Use an API key, not a Claude subscription, for anything beyond light personal experiments.** This project was built and tested on a Claude Pro/Max subscription. Running dozens of agents and headless sessions goes beyond the ordinary individual use that subscriptions are meant for. [Read why and how to switch](#subscription-or-api-key).
-
 ---
 
 ## Contents
@@ -84,6 +81,9 @@ flowchart TB
 - **Subagents cannot call each other**, so every handoff goes through Ankit. This keeps one accountable coordinator and a clean record.
 - **`workspace/` is the source of truth.** Tasks are Markdown files in `workspace/jira/`, documents are in `workspace/confluence/`, approvals are in `workspace/approvals/`.
 - **Hooks** in `.claude/settings.json` run the sync scripts after every file change, so Jira and Confluence stay current without anyone remembering to update them.
+- > [!WARNING]
+> **Use an API key, not a Claude subscription, for anything beyond light personal experiments.** This project was built and tested on a Claude Pro/Max subscription. Running dozens of agents and headless sessions goes beyond the ordinary individual use that subscriptions are meant for. [Read why and how to switch](#subscription-or-api-key).
+
 
 ## Quick start
 
