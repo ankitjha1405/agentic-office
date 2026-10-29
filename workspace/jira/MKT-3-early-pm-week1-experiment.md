@@ -26,3 +26,4 @@ Turn posts 1-5 from the MKT-2 brief into ready-to-post packs, framed as an exper
 - 2026-10-30 · ankit-jha (Ankit): CEO asked the team to run the content loop on its own. Treated as go-ahead to draft on the 60/40 direction; publishing still needs CEO. Assigned to scriptwriter (Varun).
 - 2026-10-30 · scriptwriter (Varun): Wrote 5 packs (posts 1,3,5,2,8; Mon 11-02 to Fri 11-06, 19:30 IST) and experiment tracker in workspace/confluence/products/the-early-pm/. Levels.fyi figures and tool free tiers marked VERIFY. Senior PM India range pulled from Masai School. Nothing published. Status set to Internal Review.
 - 2026-10-30 · scriptwriter (Varun): 5 packs and tracker done, VERIFY flags on all unconfirmed numbers. Ankit reviewed and filed publish approval 2026-10-30-early-pm-week1-publish.md.
+- 2026-10-30 · ankit-jha (Ankit): Built content calendar (20 posts, Nov 2-27) and /produce-post pipeline. CEO chose Kokoro af_heart voice and all three video tools, picked by fit.

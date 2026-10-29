@@ -1,0 +1,4 @@
+# Rendered media is large; keep it out of git
+ready/**/*.mp4
+ready/**/*.wav
+ready/**/*.mov
