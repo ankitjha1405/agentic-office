@@ -162,7 +162,12 @@ Risks:
 5. **Faceless authority gap:** accounts with strong PM outliers often cite credentials (ex-Amazon, ex-Microsoft, Head of AI Products). A nameless page needs a proof device: real sources on screen, real builds, a consistent character or voice. `[H]`
 6. **Platform rules:** comment-keyword giveaways and automated DMs can trigger spam limits. Prepare, do not automate. `[H]`
 
-Kill-switch (test, `[H]`): after 20 posts, if fewer than 3 reach ~5x followers, or non-follower reach is under ~50%, move the mix to 40/60 and re-run this research.
+Kill-switch (test, `[H]`, revised 2026-10-29 by Ankit after CEO input): the account starts with zero real followers (current followers are paid), so follower multiples are meaningless. Judge the first 20 posts on absolute numbers from Insights instead:
+- Views per reel at 7 days: median of at least 500, and at least 3 reels above 5,000.
+- Follows per 1,000 views: at least 3 (shows the topic converts, not just gets watched).
+- Shares plus saves per 1,000 views: at least 10.
+- Compare the career half against the builder half on these numbers. If builder posts beat career posts on two of the three, move the mix to 40/60 and re-run this research.
+Paid followers do not watch or engage, so they drag the account's engagement rate down. Treat them as noise, ideally remove them, and never buy more. Use Trial Reels (shown only to non-followers) to test hooks.
 
 ## 5. First 10 posts (faceless)
 

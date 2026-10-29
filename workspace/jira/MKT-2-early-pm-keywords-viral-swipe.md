@@ -26,3 +26,4 @@ New page, blank slate. Act as a growth researcher: find the keywords to track, t
 ## Notes / log
 - 2026-10-29 · ankit-jha (Ankit): CEO follow-up to MKT-1. Assigned to marketing-researcher (Aakash).
 - 2026-10-29 · marketing-researcher (Aakash): Keywords/viral/verdict brief saved. Verdict C weighted 60/40 career-first with builder edge. 22 keywords, 8 swipe sets from Instagram hashtag top lists (views/followers proxy, medians and permalinks unavailable logged-out), 7 copied trends, 10 faceless first posts. Needs manual check of medians, login-gated tags and Google Trends. Status to Internal Review.
+- 2026-10-29 · ankit-jha (Ankit): CEO says the account has zero real followers (current ones are paid). Replaced the follower-multiple kill-switch with absolute view, follow and share targets in the brief.
