@@ -16,8 +16,8 @@ Ready files for each date land in `products/the-early-pm/ready/<date>/`.
 
 | Date | Day | Side | Topic / hook | Format | Status |
 |---|---|---|---|---|---|
-| 2026-11-02 | Mon | Career | PM pay in India, by level | Carousel | Scripted |
-| 2026-11-03 | Tue | Career | AI PM doesn't mean managing AI products | Reel | Scripted |
+| 2026-11-02 | Mon | Career | PM pay in India, by level | Carousel | Edited |
+| 2026-11-03 | Tue | Career | AI PM doesn't mean managing AI products | Reel | Edited |
 | 2026-11-04 | Wed | Builder | I built a clickable PM prototype in N minutes | Reel, screen recording | Scripted |
 | 2026-11-05 | Thu | Career | Top PM pay by company, per Levels.fyi | Reel | Scripted |
 | 2026-11-06 | Fri | Builder | 5 free tools a PM can prototype with this week | Reel, screen recording | Scripted |

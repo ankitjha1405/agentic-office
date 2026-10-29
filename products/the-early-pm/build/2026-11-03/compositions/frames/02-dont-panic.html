@@ -1,0 +1,134 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=IBM+Plex+Mono:wght@500&display=swap");
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    #dp02-ground {
+      position: absolute;
+      inset: 0;
+      background: #e85d26;
+    }
+    #dp02-stage {
+      position: absolute;
+      left: 80px;
+      top: 300px;
+      width: 770px;
+      height: 850px;
+    }
+    #dp02-kicker {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 40px;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, 0.75);
+      white-space: nowrap;
+    }
+    #dp02-kicker-text {
+      position: relative;
+      display: inline-block;
+    }
+    #dp02-caret {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      margin-left: 4px;
+      width: 4px;
+      height: 38px;
+      background: #111111;
+    }
+    .dp02-word {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Barlow", sans-serif;
+      font-weight: 900;
+      font-size: 270px;
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      color: #111111;
+      white-space: nowrap;
+    }
+    #dp02-dont { top: 290px; }
+    .dp02-apos { margin: 0 0.06em 0 0.04em; }
+    #dp02-panic { top: 528px; }
+  </style>
+
+  <div id="root" data-composition-id="02-dont-panic" data-width="1080" data-height="1920">
+    <div id="dp02-ground" class="clip" data-start="0" data-duration="3.307" data-track-index="0"></div>
+    <div id="dp02-stage" class="clip" data-start="0" data-duration="3.307" data-track-index="1">
+      <div id="dp02-kicker"><span id="dp02-kicker-text"></span></div>
+      <div id="dp02-dont" class="dp02-word">don<span class="dp02-apos">'</span>t</div>
+      <div id="dp02-panic" class="dp02-word">panic.</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const ID = "02-dont-panic";
+      const DUR = 3.307;
+      const KICKER = "IF YOU'RE EARLY IN PM";
+      const ADV = 0.74; // mono advance 0.6em + 0.14em tracking, per char
+      // VO word onsets (audio_meta.json frame 2)
+      const T_TYPE_START = 0.03, T_TYPE_END = 1.45, T_THAT = 1.55, T_FOR = 2.73;
+
+      const textEl = document.querySelector("#dp02-kicker-text");
+      const chars = KICKER.split("").map((c) => {
+        const s = document.createElement("span");
+        s.textContent = c === " " ? " " : c;
+        s.style.opacity = "0";
+        textEl.appendChild(s);
+        return s;
+      });
+      const caret = document.createElement("span");
+      caret.id = "dp02-caret";
+      textEl.appendChild(caret);
+
+      const tl = gsap.timeline({ paused: true });
+
+      // Scene 1: type-on kicker, char by char, caret tracks the head
+      const step = (T_TYPE_END - T_TYPE_START) / chars.length;
+      chars.forEach((s, i) => {
+        const t = T_TYPE_START + step * i;
+        tl.set(s, { opacity: 1 }, t);
+        tl.set(caret, { left: (i + 1) * ADV + "em" }, t);
+      });
+      // caret blinks after typing (discrete sets, seek-safe)
+      [1.75, 2.05, 2.35, 2.65, 2.95, 3.25].forEach((t, i) => {
+        tl.set(caret, { opacity: i % 2 ? 1 : 0 }, t);
+      });
+
+      // Scene 2: "don't" slams in (scale + blur slam)
+      tl.fromTo("#dp02-dont",
+        { scale: 1.6, filter: "blur(18px)", opacity: 0 },
+        { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.45, ease: "power4.out" },
+        T_THAT);
+
+      // Scene 3: "panic." side-snaps in on "for nothing"; holds
+      tl.fromTo("#dp02-panic",
+        { x: -340, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+        T_FOR);
+
+      // slow push-in under the whole shot
+      tl.fromTo("#dp02-stage", { scale: 1 }, { scale: 1.02, duration: DUR, ease: "none" }, 0);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

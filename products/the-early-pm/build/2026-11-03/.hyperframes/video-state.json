@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "historyId": "943f669f-99ae-4939-a259-7b242eae8b57",
+  "currentRevision": "60e9034c-49e0-4c87-8eec-a441f1b03aa6",
+  "pendingChanges": false,
+  "files": {
+    ".media/manifest.jsonl": {
+      "hash": "686df744fdc463bd75adf176c93ac59c9060e58cd873ec9874e0790cb24506f2",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/68/686df744fdc463bd75adf176c93ac59c9060e58cd873ec9874e0790cb24506f2"
+    },
+    "AGENTS.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "BRIEF.md": {
+      "hash": "67eb0ea014c055b2a465598ad3eca00ccef756d4ea3807adef45fb96780abe7f",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/67/67eb0ea014c055b2a465598ad3eca00ccef756d4ea3807adef45fb96780abe7f"
+    },
+    "CLAUDE.md": {
+      "hash": "1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/1d/1d4f0c8ca2507b94fd7c9df709fff01416adbd51a0f922b9d6ed2f40129147d5"
+    },
+    "SCRIPT.md": {
+      "hash": "a3833d2047ccf45f0d9b6f12851d3ed76852d600acc14dca352050973d8f4035",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/a3/a3833d2047ccf45f0d9b6f12851d3ed76852d600acc14dca352050973d8f4035"
+    },
+    "STORYBOARD.md": {
+      "hash": "7c33c4751916490d720eb767ab889837f5e7daff5cfb58908f8e041dba080f68",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/7c/7c33c4751916490d720eb767ab889837f5e7daff5cfb58908f8e041dba080f68"
+    },
+    "assets/fonts/Barlow-700.woff2": {
+      "hash": "65a47caa5183b035bf78d0f93adbe5cea500333410259c54abf2de356740df7e",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/65/65a47caa5183b035bf78d0f93adbe5cea500333410259c54abf2de356740df7e"
+    },
+    "assets/fonts/Barlow-800.woff2": {
+      "hash": "1f132510bc7b665bbe5fb9227b0d2daafa5513296a72f88f88d38179eded9277",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/1f/1f132510bc7b665bbe5fb9227b0d2daafa5513296a72f88f88d38179eded9277"
+    },
+    "assets/fonts/Barlow-900.woff2": {
+      "hash": "f9bfb04a18c8be687fadacd7f67647b65113ee8d1aabcb0f410eac21681fa7ef",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/f9/f9bfb04a18c8be687fadacd7f67647b65113ee8d1aabcb0f410eac21681fa7ef"
+    },
+    "assets/fonts/IBM_Plex_Mono-500.woff2": {
+      "hash": "756026ff72eb76fd971ac4b7504cec55eef62109d2684c2cad8da32170b80b37",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/75/756026ff72eb76fd971ac4b7504cec55eef62109d2684c2cad8da32170b80b37"
+    },
+    "assets/voice/01.wav": {
+      "hash": "387b55fe7bda0a38a522d2a151ecc91210c514bb2a8ef9c1b72aa324be3ad7fc",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/38/387b55fe7bda0a38a522d2a151ecc91210c514bb2a8ef9c1b72aa324be3ad7fc"
+    },
+    "assets/voice/02.wav": {
+      "hash": "5e3541d1db2c9734b611c3bbd5a4d2a8c4a11bd2e0af9e7b6448c2caa6a1810e",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/5e/5e3541d1db2c9734b611c3bbd5a4d2a8c4a11bd2e0af9e7b6448c2caa6a1810e"
+    },
+    "assets/voice/03.wav": {
+      "hash": "a9e16b07d07cad3c2c20f0ab089557e1270477fc0348278f0f8ea8b41daaf437",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/a9/a9e16b07d07cad3c2c20f0ab089557e1270477fc0348278f0f8ea8b41daaf437"
+    },
+    "assets/voice/04.wav": {
+      "hash": "b3d96fa4984074e834a88a10a422bd1f41f0bea97e552252f1c08a41b7d858b7",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/b3/b3d96fa4984074e834a88a10a422bd1f41f0bea97e552252f1c08a41b7d858b7"
+    },
+    "assets/voice/05.wav": {
+      "hash": "649ed5ce5359337bec224c29236582c9df883d15a73290a100eed43730920ed4",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/64/649ed5ce5359337bec224c29236582c9df883d15a73290a100eed43730920ed4"
+    },
+    "assets/voice/06.wav": {
+      "hash": "29d1f541212c3834d157fc6184235fdcd7f6bb6b912ea6bb428516e7b6402f5d",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/29/29d1f541212c3834d157fc6184235fdcd7f6bb6b912ea6bb428516e7b6402f5d"
+    },
+    "audio_engine_meta.json": {
+      "hash": "4cb32ac6ff49b289c2f75a59908cdaa910a7d3e849fa6b4596881ffe4f0d7172",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/4c/4cb32ac6ff49b289c2f75a59908cdaa910a7d3e849fa6b4596881ffe4f0d7172"
+    },
+    "audio_meta.json": {
+      "hash": "638986848377ace0da1a4f9931eb8706594c18c28f86f7b852ba4eb6438f99d6",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/63/638986848377ace0da1a4f9931eb8706594c18c28f86f7b852ba4eb6438f99d6"
+    },
+    "audio_request.json": {
+      "hash": "f7da51909eeb3d3d47060fef63372240912c9ff32726dbecb7fd56fa39062a1d",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/f7/f7da51909eeb3d3d47060fef63372240912c9ff32726dbecb7fd56fa39062a1d"
+    },
+    "caption-overrides.json": {
+      "hash": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/37/37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "caption_groups.json": {
+      "hash": "3c22974f97c56417303069901a64ae59bfa7bc5daf44056d8c78b65fd80eaa0b",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/3c/3c22974f97c56417303069901a64ae59bfa7bc5daf44056d8c78b65fd80eaa0b"
+    },
+    "capture/extracted/tokens.json": {
+      "hash": "73b6c378e7fa04003242a79d760d8aae0a3f7bc35bbb91c29ca09e45f545a474",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/73/73b6c378e7fa04003242a79d760d8aae0a3f7bc35bbb91c29ca09e45f545a474"
+    },
+    "capture/extracted/visible-text.txt": {
+      "hash": "0155e39c19f8bd576b851acb44462650b11bc6b11e667ba5dab68268e20d9f0f",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/01/0155e39c19f8bd576b851acb44462650b11bc6b11e667ba5dab68268e20d9f0f"
+    },
+    "compositions/captions.html": {
+      "hash": "8db6394548963742e210fda053ebe752088e09aa6f5c7073c73cd38ea29298a6",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/8d/8db6394548963742e210fda053ebe752088e09aa6f5c7073c73cd38ea29298a6"
+    },
+    "compositions/frames/01-hook.html": {
+      "hash": "439bad1bad47e5d2010c6d94427f3bffde2980828cd577e3bbb7a81c447e2b33",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/43/439bad1bad47e5d2010c6d94427f3bffde2980828cd577e3bbb7a81c447e2b33"
+    },
+    "compositions/frames/02-dont-panic.html": {
+      "hash": "339b70dd666f7bca8958204b450ca57ca8d5859aa14d91de50e1b1192e115755",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/33/339b70dd666f7bca8958204b450ca57ca8d5859aa14d91de50e1b1192e115755"
+    },
+    "compositions/frames/03-the-number.html": {
+      "hash": "c56692084e753cf284ceb4ad25cf2d6d60a3b1d1af5787c82d3db11725ffc801",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/c5/c56692084e753cf284ceb4ad25cf2d6d60a3b1d1af5787c82d3db11725ffc801"
+    },
+    "compositions/frames/04-practical-ask.html": {
+      "hash": "aecdc470134a99d7a9fb716b0f1b4d67b22f3316d99e1174ce071097a77cc87f",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/ae/aecdc470134a99d7a9fb716b0f1b4d67b22f3316d99e1174ce071097a77cc87f"
+    },
+    "compositions/frames/05-the-point.html": {
+      "hash": "95df1934ce18466f73bfe45a950998be6ada676cb0bac78debaa79d2bb0d098a",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/95/95df1934ce18466f73bfe45a950998be6ada676cb0bac78debaa79d2bb0d098a"
+    },
+    "compositions/frames/06-cta.html": {
+      "hash": "ad01f24e64fd3b47738aa96aa9c59862c96865b6b89d95849e1eca03e655fafa",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/ad/ad01f24e64fd3b47738aa96aa9c59862c96865b6b89d95849e1eca03e655fafa"
+    },
+    "frame.md": {
+      "hash": "3af0a1e5e61bece19841671672d7732082f03d5699b713475e90323a21dbcc89",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/3a/3af0a1e5e61bece19841671672d7732082f03d5699b713475e90323a21dbcc89"
+    },
+    "hyperframes.json": {
+      "hash": "9313260261b6e431830877ee35083331270bc6b9a32d50650abe2bd58bdf558d",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/93/9313260261b6e431830877ee35083331270bc6b9a32d50650abe2bd58bdf558d"
+    },
+    "index.html": {
+      "hash": "d71a4b7e3c3bf2a53cfa937cb66c1670cd203675b26e35e564d7e8295835cb4c",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/d7/d71a4b7e3c3bf2a53cfa937cb66c1670cd203675b26e35e564d7e8295835cb4c"
+    },
+    "meta.json": {
+      "hash": "a93bad10eb1f9a333a278687b5a98cfd27ccbfc5ec2e95ad38c62a65fdf6693c",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/a9/a93bad10eb1f9a333a278687b5a98cfd27ccbfc5ec2e95ad38c62a65fdf6693c"
+    },
+    "package.json": {
+      "hash": "a76debecc3fc2d50de69229e85fe993b4d5901669c1a5cb09d8977d908255450",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/a7/a76debecc3fc2d50de69229e85fe993b4d5901669c1a5cb09d8977d908255450"
+    },
+    "user_script.txt": {
+      "hash": "3ae5f15ceeebe4052f418a96e6ec9c6f38c58a080f10bb3d9bbde8dc8b38f439",
+      "content": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/3a/3ae5f15ceeebe4052f418a96e6ec9c6f38c58a080f10bb3d9bbde8dc8b38f439"
+    }
+  },
+  "revisions": {
+    "60e9034c-49e0-4c87-8eec-a441f1b03aa6": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793300537119,
+      "endedAt": 1793300537119,
+      "files": {
+        "compositions/frames/03-the-number.html": {
+          "before": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/1c/1c5da04d9ee2792c96288486382aad1421fbfbd83d23da9974ac95df2084d0e3",
+          "after": "/Users/ankitkumar/.cache/hyperframes/history/943f669f-99ae-4939-a259-7b242eae8b57/blobs/c5/c56692084e753cf284ceb4ad25cf2d6d60a3b1d1af5787c82d3db11725ffc801"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "60e9034c-49e0-4c87-8eec-a441f1b03aa6",
+      "id": "eaebad51-fb68-4b9f-a5f5-34232a127944"
+    },
+    "revisions": {
+      "60e9034c-49e0-4c87-8eec-a441f1b03aa6": [
+        {
+          "id": "eaebad51-fb68-4b9f-a5f5-34232a127944",
+          "scope": "project",
+          "report": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/checks/eaebad51-fb68-4b9f-a5f5-34232a127944.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793300539400,
+          "contentHash": "bb722efc763765f26ae3f1b9b549497204309a0c4667cd95e65f3118f72befb1",
+          "revision": "60e9034c-49e0-4c87-8eec-a441f1b03aa6",
+          "inputFingerprint": "e682caa9855de9d6b873bc5ecd612e341676e460555d4c29b841bfcdd2fcb05f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "2c1f79e6-03d7-4dc6-af80-c7242a243260",
+        "scope": "project",
+        "report": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/checks/2c1f79e6-03d7-4dc6-af80-c7242a243260.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793300511061,
+        "contentHash": "2f43b4bc14791443735fcd5cb48067c2609400a20d88fedab45adf1cbd043509",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-6"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-0",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-00-at-3s.png",
+        "time": 3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520349,
+        "contentHash": "b33e8de5c4ca8f13606dd2b2e38f8200a24ae3fcdf940f8ed4682bd88c1d7c3f",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-1",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-01-at-6.4s.png",
+        "time": 6.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520349,
+        "contentHash": "78f6d8d67d04bb8f685a587ae083ea712075a16d1e2b6a860e090a2f1a9be775",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-2",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-02-at-15.4s.png",
+        "time": 15.4,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520350,
+        "contentHash": "e5460cebf5b67abfa5c51a7fc842655d7279ffadf97eb57a085d852f7d9cd326",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-3",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-03-at-23.3s.png",
+        "time": 23.3,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520350,
+        "contentHash": "51df36efa96c5b20d01b71a7599bbd92537b41d17e0e183f1a11d270e3e1659e",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-4",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-04-at-27s.png",
+        "time": 27,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520350,
+        "contentHash": "c4fbcc97c6f36a45e46be02edaa46652bd4943a54b2da6f00f9f7d6d9ef4613d",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-5",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-05-at-34s.png",
+        "time": 34,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520350,
+        "contentHash": "2f4be074fd8b6e77ede6ec243fe20ed385ef26f2a5f44306bf5e01b4f90e5606",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "2fac4522-9bf6-41a5-ab03-fcb011b54282-6",
+        "image": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/.hyperframes/artifacts/snapshots/59dc22d9-3f45-481b-99aa-508f050f3b98/frame-06-at-33.276s.png",
+        "time": 33.276,
+        "metadata": {
+          "width": 1080,
+          "height": 1920,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1793300520350,
+        "contentHash": "126cb58ec5f407bde66541da384c4829cff1132ed5888fe0e1a9281a4a1dd64b",
+        "revision": null,
+        "inputFingerprint": "194d023b7cdb79988b7b2823e7c0396644b3740bc3869e5c7625032b2e8c7a3e",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "d6a67fb9-6988-4ef3-be85-ed546f0ea1ff",
+      "completedAt": 1793300586899,
+      "output": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/renders/video.mp4",
+      "status": "completed",
+      "revision": "60e9034c-49e0-4c87-8eec-a441f1b03aa6"
+    },
+    "retainedRevisions": [
+      "60e9034c-49e0-4c87-8eec-a441f1b03aa6"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

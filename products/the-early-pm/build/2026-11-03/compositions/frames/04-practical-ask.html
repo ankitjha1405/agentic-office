@@ -1,0 +1,160 @@
+<template id="04-practical-ask-template">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=IBM+Plex+Mono:wght@500&display=block");
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    #a04-bg {
+      position: absolute;
+      inset: 0;
+      background: #111111;
+    }
+    /* foreground safe box: x 80–850, y 300–1150 (IG 4:5 crop + right-side buttons) */
+    #a04-stage {
+      position: absolute;
+      left: 80px;
+      top: 300px;
+      width: 770px;
+      height: 850px;
+    }
+    #a04-kicker {
+      position: absolute;
+      left: 0;
+      top: 40px;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #e85d26;
+      white-space: nowrap;
+    }
+    #a04-stub {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 2px;
+      background: #e85d26;
+    }
+    .a04-display {
+      position: absolute;
+      left: 0;
+      font-family: "Barlow", sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
+      text-transform: lowercase;
+      white-space: nowrap;
+    }
+    #a04-proto {
+      top: 120px;
+      font-size: 140px;
+      color: #f0ece5;
+    }
+    #a04-proto span {
+      display: inline-block;
+    }
+    #a04-big {
+      top: 270px;
+      font-size: 230px;
+      color: #e85d26;
+    }
+    #a04-track {
+      position: absolute;
+      left: 0;
+      top: 520px;
+      width: 770px;
+      height: 1px;
+      background: #282826;
+    }
+    #a04-fill {
+      position: absolute;
+      left: 0;
+      top: 519px;
+      width: 770px;
+      height: 3px;
+      background: #e85d26;
+      transform-origin: 0 50%;
+    }
+    .a04-item {
+      position: absolute;
+      left: 0;
+      width: 770px;
+      height: 84px;
+      border-top: 1px solid #282826;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 52px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f0ece5;
+      line-height: 84px;
+      white-space: nowrap;
+    }
+    .a04-item b {
+      font-weight: 500;
+      color: #e85d26;
+      margin-right: 28px;
+    }
+    #a04-i1 { top: 580px; }
+    #a04-i2 { top: 664px; }
+    #a04-i3 { top: 748px; }
+  </style>
+
+  <div id="root" data-composition-id="04-practical-ask" data-width="1080" data-height="1920">
+    <div id="a04-bg" class="clip" data-start="0" data-duration="8.619" data-track-index="0"></div>
+    <div id="a04-stage" class="clip" data-start="0" data-duration="8.619" data-track-index="1">
+      <div id="a04-stub"></div>
+      <div id="a04-kicker">The interview ask</div>
+      <div id="a04-proto" class="a04-display"><span id="a04-w1">prototype</span> <span id="a04-w2">in</span></div>
+      <div id="a04-big" class="a04-display">45 min</div>
+      <div id="a04-track"></div>
+      <div id="a04-fill"></div>
+      <div id="a04-i1" class="a04-item"><b>/</b>Cursor</div>
+      <div id="a04-i2" class="a04-item"><b>/</b>Bolt</div>
+      <div id="a04-i3" class="a04-item"><b>/</b>Lovable</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // macro move: slow push on the whole stage, centered so it stays inside the safe box
+      tl.fromTo("#a04-stage", { scale: 0.985, transformOrigin: "50% 50%" }, { scale: 1.0, duration: 8.619, ease: "none" }, 0);
+
+      // Scene 1 — kicker on "the ask is often practical"
+      tl.fromTo("#a04-stub", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.35, ease: "power3.out" }, 0.15);
+      tl.fromTo("#a04-kicker", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.25);
+      // timer track lays down early, empty
+      tl.fromTo("#a04-track", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.9);
+
+      // Scene 2 — "prototype" slam (~3.7s), "in" follows
+      tl.fromTo("#a04-w1", { opacity: 0, scale: 1.4, filter: "blur(10px)", transformOrigin: "0% 80%" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.32, ease: "expo.out" }, 3.6);
+      tl.fromTo("#a04-w2", { opacity: 0, scale: 1.4, filter: "blur(10px)", transformOrigin: "0% 80%" },
+        { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "expo.out" }, 4.05);
+
+      // "45 min" spring-pop on "45 minutes" (~4.7s) — focal
+      tl.fromTo("#a04-big", { opacity: 0, scale: 0.55, y: 40, transformOrigin: "0% 80%" },
+        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(2.2)" }, 4.62);
+
+      // timer fill starts under it and runs to the end
+      tl.fromTo("#a04-fill", { scaleX: 0 }, { scaleX: 1, duration: 8.619 - 4.9, ease: "none" }, 4.9);
+
+      // Scene 3 — tool names stack in on each spoken name
+      [["#a04-i1", 6.65], ["#a04-i2", 7.25], ["#a04-i3", 7.95]].forEach(function (it) {
+        tl.fromTo(it[0], { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, it[1]);
+      });
+
+      window.__timelines["04-practical-ask"] = tl;
+    })();
+  </script>
+</template>

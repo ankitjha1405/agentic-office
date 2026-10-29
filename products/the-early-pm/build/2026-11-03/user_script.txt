@@ -1,0 +1,6 @@
+AI PM doesn't mean managing AI products.
+If you're early in PM, that title is scaring you for nothing.
+One analysis of about 15,000 PM job posts in May 2026 found 15.7% asked for generative AI skills. That's about one in six.
+And the ask is often practical. Some interviews have you build a prototype in 45 minutes with tools like Cursor, Bolt or Lovable.
+So the skill is using AI to build, not running a model team.
+Follow if you're breaking into PM. Next up, I build one.

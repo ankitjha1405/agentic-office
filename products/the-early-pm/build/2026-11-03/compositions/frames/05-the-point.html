@@ -1,0 +1,111 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=IBM+Plex+Mono:wght@500&display=block");
+
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    #f05-the-point-bg {
+      position: absolute;
+      inset: 0;
+      background: #E85D26;
+    }
+    /* all foreground inside the IG 4:5 safe box: x 80–850, y 300–1150 */
+    #f05-the-point-stage {
+      position: absolute;
+      left: 80px;
+      top: 300px;
+      width: 770px;
+      height: 850px;
+    }
+    #f05-the-point-group {
+      position: absolute;
+      left: 0;
+      top: 70px;
+      width: 770px;
+    }
+    [data-tp="line"] {
+      display: block;
+      font-family: "Barlow", sans-serif;
+      font-weight: 900;
+      text-transform: lowercase;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
+      color: #111111;
+      white-space: nowrap;
+      transform-origin: 0% 60%;
+    }
+    #f05-the-point-use {
+      font-size: 150px;
+      margin-bottom: 70px;
+    }
+    #f05-the-point-ship,
+    #f05-the-point-proto {
+      font-size: 168px;
+    }
+    #f05-the-point-not {
+      position: relative;
+      display: inline-block;
+      margin-top: 90px;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 34px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, 0.75);
+      white-space: nowrap;
+    }
+    #f05-the-point-strike {
+      position: absolute;
+      left: 0;
+      right: -8px;
+      top: 50%;
+      height: 4px;
+      margin-top: -2px;
+      background: #111111;
+      transform-origin: 0% 50%;
+    }
+  </style>
+
+  <div id="root" data-composition-id="05-the-point" data-width="1080" data-height="1920">
+    <div id="f05-the-point-bg" class="clip" data-start="0" data-duration="3.733" data-track-index="0"></div>
+    <div id="f05-the-point-stage" class="clip" data-start="0" data-duration="3.733" data-track-index="1">
+      <div id="f05-the-point-group">
+        <span id="f05-the-point-use" data-tp="line">use ai.</span>
+        <span id="f05-the-point-ship" data-tp="line">ship a</span>
+        <span id="f05-the-point-proto" data-tp="line">prototype.</span>
+        <span id="f05-the-point-not">NOT: RUN A MODEL TEAM<span id="f05-the-point-strike"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const $ = (id) => document.querySelector('[id="f05-the-point-' + id + '"]');
+      const tl = gsap.timeline({ paused: true });
+      const slam = { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" };
+
+      // slow push underneath the whole shot so the hold never freezes
+      tl.fromTo($("group"), { scale: 1 }, { scale: 1.03, duration: 3.733, ease: "none", transformOrigin: "0% 0%" }, 0);
+
+      // Scene 1: "use ai." slams in (upper third)
+      tl.fromTo($("use"), { scale: 1.45, opacity: 0, filter: "blur(10px)" }, { ...slam }, 0.12);
+
+      // Scene 2: "ship a" / "prototype." slam in on "to build" (1.74s)
+      tl.fromTo($("ship"), { scale: 1.45, opacity: 0, filter: "blur(10px)" }, { ...slam }, 1.74);
+      tl.fromTo($("proto"), { scale: 1.45, opacity: 0, filter: "blur(10px)" }, { ...slam }, 1.9);
+
+      // Scene 3: mono line on "not" (2.41s), ink strike wipes through "running a model team"
+      tl.fromTo($("not"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.22, ease: "power3.out" }, 2.41);
+      tl.fromTo($("strike"), { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 2.56);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["05-the-point"] = tl;
+    })();
+  </script>
+</template>

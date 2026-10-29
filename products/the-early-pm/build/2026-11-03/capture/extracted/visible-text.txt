@@ -1,0 +1,37 @@
+# POST 3 - Tue 2026-11-03 - 19:30 IST - Reel - Career
+
+**Hypothesis:** A myth-bust on the "AI PM" title, anchored on one sourced job-post number, will beat 500 median views and earn at least 3 follows per 1,000 views, because it clears up a title early-career PMs find confusing. Modelled on @uxr.pri (150K at 8.2K followers).
+
+**Hook:** "AI PM doesn't mean managing AI products." On screen: `AI PM ≠ AI PRODUCTS`
+**Alt hook 1 (Trial Reel):** "About one in six PM job posts now asks for AI skills. Not AI experience." On screen: `1 IN 6 PM JOBS`
+**Alt hook 2 (Trial Reel):** "The AI PM job is not what the title says." On screen: `NOT WHAT IT SAYS`
+
+**Hook score note (hookscore.py):** alt hook 1 scored 57 OK, main 44 WEAK, alt 2 41 WEAK. Main hook kept because it is the proven @uxr.pri line from the brief. If Trial Reel alt 1 wins, promote it.
+
+**Single idea:** In listings, "AI" is more often a skill requirement than a team you run. (Hypothesis, flagged in risks.)
+
+### Voiceover (about 28 s, 76 words)
+
+| Time | Spoken | On-screen text | Show |
+|---|---|---|---|
+| 0:00-0:02 | AI PM doesn't mean managing AI products. | `AI PM ≠ AI PRODUCTS` | Black card, text slams in at frame 1 |
+| 0:02-0:06 | If you're early in PM, that title is scaring you for nothing. | `DON'T PANIC` | Scroll a job board search results page (screen recording, blur company names) |
+| 0:06-0:13 | One analysis of about 15,000 PM job posts in May 2026 found 15.7% asked for generative AI skills. That's about one in six. | `15.7% OF ~15,000 PM POSTS`<br>`ASK FOR GENAI SKILLS` | Text card with the number, source line under it: `dev.to, May 2026` |
+| 0:13-0:21 | And the ask is often practical. Some interviews have you build a prototype in 45 minutes with tools like Cursor, Bolt or Lovable. | `PROTOTYPE IN 45 MIN`<br>`CURSOR / BOLT / LOVABLE` | Screen recording of a prompt going into an AI builder; second cut of the finished screen |
+| 0:21-0:26 | So the skill is using AI to build, not running a model team. | `USE AI. SHIP A PROTOTYPE.` | Text card, one line |
+| 0:26-0:30 | Follow if you're breaking into PM. Next up, I build one. | `PM, BUT YOU CAN BUILD` | End card, hook word "AI" echoed in last line of caption |
+
+Loop: last line echoes "AI PM" (card 1 reads `AI PM`, final card ends `... AI PM`). Keep it to one echo word.
+
+### Caption (Job A: the reel carries the hook)
+
+```
+Follow me if you are breaking into PM. I will show you how to build the proof.
+
+AI product manager is a title that confuses a lot of people. In the job posts I could source, AI shows up as a skill line far more often than a team to run. 15.7% of about 15,000 PM posts in May 2026 asked for it.
+
+That is one analysis, not the whole market, so check posts in your own city.
+
+#aiproductmanager #productmanager #pmjobs
+```
+

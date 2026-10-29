@@ -1,0 +1,34 @@
+{
+  "provider": "auto",
+  "speed": "1.0",
+  "lines": [
+    {
+      "id": "01",
+      "text": "AI PM doesn't mean managing AI products."
+    },
+    {
+      "id": "02",
+      "text": "If you're early in PM, that title is scaring you for nothing."
+    },
+    {
+      "id": "03",
+      "text": "One analysis of about 15,000 PM job posts in May 2026 found 15.7% asked for generative AI skills. That's about one in six."
+    },
+    {
+      "id": "04",
+      "text": "And the ask is often practical. Some interviews have you build a prototype in 45 minutes with tools like Cursor, Bolt or Lovable."
+    },
+    {
+      "id": "05",
+      "text": "So the skill is using AI to build, not running a model team."
+    },
+    {
+      "id": "06",
+      "text": "Follow if you're breaking into PM. Next up, I build one."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "af_heart"
+}

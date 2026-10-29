@@ -1,0 +1,904 @@
+{
+  "total_duration_s": 34.305,
+  "width": 1080,
+  "height": 1920,
+  "groups": [
+    {
+      "id": "caption-group-0",
+      "frame": 1,
+      "start": 0.04,
+      "end": 1.28,
+      "text": "AI PM doesn't mean",
+      "words": [
+        {
+          "id": "caption-word-0-0",
+          "text": "AI PM",
+          "start": 0.04,
+          "end": 0.33
+        },
+        {
+          "id": "caption-word-0-1",
+          "text": "doesn't",
+          "start": 0.33,
+          "end": 0.92
+        },
+        {
+          "id": "caption-word-0-2",
+          "text": "mean",
+          "start": 0.93,
+          "end": 1.28
+        }
+      ]
+    },
+    {
+      "id": "caption-group-1",
+      "frame": 1,
+      "start": 1.28,
+      "end": 3.23,
+      "text": "managing AI products.",
+      "words": [
+        {
+          "id": "caption-word-1-0",
+          "text": "managing",
+          "start": 1.28,
+          "end": 1.98
+        },
+        {
+          "id": "caption-word-1-1",
+          "text": "AI",
+          "start": 1.98,
+          "end": 2.15
+        },
+        {
+          "id": "caption-word-1-2",
+          "text": "products.",
+          "start": 2.15,
+          "end": 3.13
+        }
+      ]
+    },
+    {
+      "id": "caption-group-2",
+      "frame": 2,
+      "start": 3.23,
+      "end": 3.83,
+      "text": "If you're",
+      "words": [
+        {
+          "id": "caption-word-2-0",
+          "text": "If",
+          "start": 3.23,
+          "end": 3.36
+        },
+        {
+          "id": "caption-word-2-1",
+          "text": "you're",
+          "start": 3.36,
+          "end": 3.83
+        }
+      ]
+    },
+    {
+      "id": "caption-group-3",
+      "frame": 2,
+      "start": 3.83,
+      "end": 4.38,
+      "text": "early in",
+      "words": [
+        {
+          "id": "caption-word-3-0",
+          "text": "early",
+          "start": 3.83,
+          "end": 4.22
+        },
+        {
+          "id": "caption-word-3-1",
+          "text": "in",
+          "start": 4.22,
+          "end": 4.38
+        }
+      ]
+    },
+    {
+      "id": "caption-group-4",
+      "frame": 2,
+      "start": 4.38,
+      "end": 4.75,
+      "text": "PM,",
+      "words": [
+        {
+          "id": "caption-word-4-0",
+          "text": "PM,",
+          "start": 4.38,
+          "end": 4.72
+        }
+      ]
+    },
+    {
+      "id": "caption-group-5",
+      "frame": 2,
+      "start": 4.75,
+      "end": 5.28,
+      "text": "that title",
+      "words": [
+        {
+          "id": "caption-word-5-0",
+          "text": "that",
+          "start": 4.75,
+          "end": 4.96
+        },
+        {
+          "id": "caption-word-5-1",
+          "text": "title",
+          "start": 4.96,
+          "end": 5.28
+        }
+      ]
+    },
+    {
+      "id": "caption-group-6",
+      "frame": 2,
+      "start": 5.28,
+      "end": 5.7,
+      "text": "is scaring",
+      "words": [
+        {
+          "id": "caption-word-6-0",
+          "text": "is",
+          "start": 5.28,
+          "end": 5.34
+        },
+        {
+          "id": "caption-word-6-1",
+          "text": "scaring",
+          "start": 5.39,
+          "end": 5.7
+        }
+      ]
+    },
+    {
+      "id": "caption-group-7",
+      "frame": 2,
+      "start": 5.7,
+      "end": 6.03,
+      "text": "you for",
+      "words": [
+        {
+          "id": "caption-word-7-0",
+          "text": "you",
+          "start": 5.7,
+          "end": 5.83
+        },
+        {
+          "id": "caption-word-7-1",
+          "text": "for",
+          "start": 5.93,
+          "end": 6.03
+        }
+      ]
+    },
+    {
+      "id": "caption-group-8",
+      "frame": 2,
+      "start": 6.03,
+      "end": 6.547,
+      "text": "nothing.",
+      "words": [
+        {
+          "id": "caption-word-8-0",
+          "text": "nothing.",
+          "start": 6.03,
+          "end": 6.44
+        }
+      ]
+    },
+    {
+      "id": "caption-group-9",
+      "frame": 3,
+      "start": 6.547,
+      "end": 7.587,
+      "text": "One analysis of",
+      "words": [
+        {
+          "id": "caption-word-9-0",
+          "text": "One",
+          "start": 6.547,
+          "end": 6.757
+        },
+        {
+          "id": "caption-word-9-1",
+          "text": "analysis",
+          "start": 6.757,
+          "end": 7.337
+        },
+        {
+          "id": "caption-word-9-2",
+          "text": "of",
+          "start": 7.437,
+          "end": 7.587
+        }
+      ]
+    },
+    {
+      "id": "caption-group-10",
+      "frame": 3,
+      "start": 7.587,
+      "end": 9.827,
+      "text": "about 15,000 PM job",
+      "words": [
+        {
+          "id": "caption-word-10-0",
+          "text": "about",
+          "start": 7.587,
+          "end": 8.007
+        },
+        {
+          "id": "caption-word-10-1",
+          "text": "15,000",
+          "start": 8.007,
+          "end": 9.407
+        },
+        {
+          "id": "caption-word-10-2",
+          "text": "PM",
+          "start": 9.417,
+          "end": 9.577
+        },
+        {
+          "id": "caption-word-10-3",
+          "text": "job",
+          "start": 9.577,
+          "end": 9.827
+        }
+      ]
+    },
+    {
+      "id": "caption-group-11",
+      "frame": 3,
+      "start": 9.827,
+      "end": 10.137,
+      "text": "posts",
+      "words": [
+        {
+          "id": "caption-word-11-0",
+          "text": "posts",
+          "start": 9.827,
+          "end": 10.017
+        }
+      ]
+    },
+    {
+      "id": "caption-group-12",
+      "frame": 3,
+      "start": 10.327,
+      "end": 11.587,
+      "text": "in May 2026",
+      "words": [
+        {
+          "id": "caption-word-12-0",
+          "text": "in",
+          "start": 10.327,
+          "end": 10.447
+        },
+        {
+          "id": "caption-word-12-1",
+          "text": "May",
+          "start": 10.447,
+          "end": 10.627
+        },
+        {
+          "id": "caption-word-12-2",
+          "text": "2026",
+          "start": 10.667,
+          "end": 11.497
+        }
+      ]
+    },
+    {
+      "id": "caption-group-13",
+      "frame": 3,
+      "start": 11.587,
+      "end": 14.617,
+      "text": "found 15.7% asked",
+      "words": [
+        {
+          "id": "caption-word-13-0",
+          "text": "found",
+          "start": 11.587,
+          "end": 12.497
+        },
+        {
+          "id": "caption-word-13-1",
+          "text": "15.7%",
+          "start": 12.617,
+          "end": 13.997
+        },
+        {
+          "id": "caption-word-13-2",
+          "text": "asked",
+          "start": 14.087,
+          "end": 14.497
+        }
+      ]
+    },
+    {
+      "id": "caption-group-14",
+      "frame": 3,
+      "start": 14.707,
+      "end": 15.427,
+      "text": "for generative",
+      "words": [
+        {
+          "id": "caption-word-14-0",
+          "text": "for",
+          "start": 14.707,
+          "end": 14.787
+        },
+        {
+          "id": "caption-word-14-1",
+          "text": "generative",
+          "start": 14.787,
+          "end": 15.387
+        }
+      ]
+    },
+    {
+      "id": "caption-group-15",
+      "frame": 3,
+      "start": 15.427,
+      "end": 16.427,
+      "text": "AI skills.",
+      "words": [
+        {
+          "id": "caption-word-15-0",
+          "text": "AI",
+          "start": 15.427,
+          "end": 15.567
+        },
+        {
+          "id": "caption-word-15-1",
+          "text": "skills.",
+          "start": 15.567,
+          "end": 16.387
+        }
+      ]
+    },
+    {
+      "id": "caption-group-16",
+      "frame": 3,
+      "start": 16.427,
+      "end": 17.607,
+      "text": "That's about one",
+      "words": [
+        {
+          "id": "caption-word-16-0",
+          "text": "That's",
+          "start": 16.427,
+          "end": 16.907
+        },
+        {
+          "id": "caption-word-16-1",
+          "text": "about",
+          "start": 16.907,
+          "end": 17.327
+        },
+        {
+          "id": "caption-word-16-2",
+          "text": "one",
+          "start": 17.347,
+          "end": 17.607
+        }
+      ]
+    },
+    {
+      "id": "caption-group-17",
+      "frame": 3,
+      "start": 17.607,
+      "end": 17.777,
+      "text": "in",
+      "words": [
+        {
+          "id": "caption-word-17-0",
+          "text": "in",
+          "start": 17.607,
+          "end": 17.657
+        }
+      ]
+    },
+    {
+      "id": "caption-group-18",
+      "frame": 3,
+      "start": 17.847,
+      "end": 18.43,
+      "text": "six.",
+      "words": [
+        {
+          "id": "caption-word-18-0",
+          "text": "six.",
+          "start": 17.847,
+          "end": 18.347
+        }
+      ]
+    },
+    {
+      "id": "caption-group-19",
+      "frame": 4,
+      "start": 18.43,
+      "end": 18.91,
+      "text": "and the",
+      "words": [
+        {
+          "id": "caption-word-19-0",
+          "text": "and",
+          "start": 18.43,
+          "end": 18.62
+        },
+        {
+          "id": "caption-word-19-1",
+          "text": "the",
+          "start": 18.62,
+          "end": 18.84
+        }
+      ]
+    },
+    {
+      "id": "caption-group-20",
+      "frame": 4,
+      "start": 18.91,
+      "end": 19.27,
+      "text": "ask is",
+      "words": [
+        {
+          "id": "caption-word-20-0",
+          "text": "ask",
+          "start": 18.91,
+          "end": 19.1
+        },
+        {
+          "id": "caption-word-20-1",
+          "text": "is",
+          "start": 19.12,
+          "end": 19.27
+        }
+      ]
+    },
+    {
+      "id": "caption-group-21",
+      "frame": 4,
+      "start": 19.27,
+      "end": 20.71,
+      "text": "often practical.",
+      "words": [
+        {
+          "id": "caption-word-21-0",
+          "text": "often",
+          "start": 19.27,
+          "end": 19.67
+        },
+        {
+          "id": "caption-word-21-1",
+          "text": "practical.",
+          "start": 19.67,
+          "end": 20.67
+        }
+      ]
+    },
+    {
+      "id": "caption-group-22",
+      "frame": 4,
+      "start": 20.71,
+      "end": 21.42,
+      "text": "Some interviews",
+      "words": [
+        {
+          "id": "caption-word-22-0",
+          "text": "Some",
+          "start": 20.71,
+          "end": 20.87
+        },
+        {
+          "id": "caption-word-22-1",
+          "text": "interviews",
+          "start": 20.88,
+          "end": 21.37
+        }
+      ]
+    },
+    {
+      "id": "caption-group-23",
+      "frame": 4,
+      "start": 21.42,
+      "end": 21.78,
+      "text": "have you",
+      "words": [
+        {
+          "id": "caption-word-23-0",
+          "text": "have",
+          "start": 21.42,
+          "end": 21.62
+        },
+        {
+          "id": "caption-word-23-1",
+          "text": "you",
+          "start": 21.62,
+          "end": 21.78
+        }
+      ]
+    },
+    {
+      "id": "caption-group-24",
+      "frame": 4,
+      "start": 21.78,
+      "end": 22.53,
+      "text": "build a prototype",
+      "words": [
+        {
+          "id": "caption-word-24-0",
+          "text": "build",
+          "start": 21.78,
+          "end": 22.02
+        },
+        {
+          "id": "caption-word-24-1",
+          "text": "a",
+          "start": 22.12,
+          "end": 22.13
+        },
+        {
+          "id": "caption-word-24-2",
+          "text": "prototype",
+          "start": 22.13,
+          "end": 22.41
+        }
+      ]
+    },
+    {
+      "id": "caption-group-25",
+      "frame": 4,
+      "start": 22.98,
+      "end": 24.11,
+      "text": "in 45 minutes",
+      "words": [
+        {
+          "id": "caption-word-25-0",
+          "text": "in",
+          "start": 22.98,
+          "end": 22.99
+        },
+        {
+          "id": "caption-word-25-1",
+          "text": "45",
+          "start": 23.07,
+          "end": 23.48
+        },
+        {
+          "id": "caption-word-25-2",
+          "text": "minutes",
+          "start": 23.48,
+          "end": 24.07
+        }
+      ]
+    },
+    {
+      "id": "caption-group-26",
+      "frame": 4,
+      "start": 24.11,
+      "end": 25.11,
+      "text": "with tools like",
+      "words": [
+        {
+          "id": "caption-word-26-0",
+          "text": "with",
+          "start": 24.11,
+          "end": 24.38
+        },
+        {
+          "id": "caption-word-26-1",
+          "text": "tools",
+          "start": 24.38,
+          "end": 24.77
+        },
+        {
+          "id": "caption-word-26-2",
+          "text": "like",
+          "start": 24.77,
+          "end": 25.02
+        }
+      ]
+    },
+    {
+      "id": "caption-group-27",
+      "frame": 4,
+      "start": 25.11,
+      "end": 25.69,
+      "text": "Cursor,",
+      "words": [
+        {
+          "id": "caption-word-27-0",
+          "text": "Cursor,",
+          "start": 25.11,
+          "end": 25.69
+        }
+      ]
+    },
+    {
+      "id": "caption-group-28",
+      "frame": 4,
+      "start": 25.69,
+      "end": 26.15,
+      "text": "Bolt,",
+      "words": [
+        {
+          "id": "caption-word-28-0",
+          "text": "Bolt,",
+          "start": 25.69,
+          "end": 26.15
+        }
+      ]
+    },
+    {
+      "id": "caption-group-29",
+      "frame": 4,
+      "start": 26.15,
+      "end": 27.059,
+      "text": "or Lovable.",
+      "words": [
+        {
+          "id": "caption-word-29-0",
+          "text": "or",
+          "start": 26.15,
+          "end": 26.37
+        },
+        {
+          "id": "caption-word-29-1",
+          "text": "Lovable.",
+          "start": 26.37,
+          "end": 27.14
+        }
+      ]
+    },
+    {
+      "id": "caption-group-30",
+      "frame": 5,
+      "start": 27.059,
+      "end": 27.459,
+      "text": "So the",
+      "words": [
+        {
+          "id": "caption-word-30-0",
+          "text": "So",
+          "start": 27.059,
+          "end": 27.169
+        },
+        {
+          "id": "caption-word-30-1",
+          "text": "the",
+          "start": 27.209,
+          "end": 27.459
+        }
+      ]
+    },
+    {
+      "id": "caption-group-31",
+      "frame": 5,
+      "start": 27.459,
+      "end": 28.539,
+      "text": "skill is using",
+      "words": [
+        {
+          "id": "caption-word-31-0",
+          "text": "skill",
+          "start": 27.459,
+          "end": 27.909
+        },
+        {
+          "id": "caption-word-31-1",
+          "text": "is",
+          "start": 27.909,
+          "end": 28.089
+        },
+        {
+          "id": "caption-word-31-2",
+          "text": "using",
+          "start": 28.089,
+          "end": 28.539
+        }
+      ]
+    },
+    {
+      "id": "caption-group-32",
+      "frame": 5,
+      "start": 28.539,
+      "end": 28.899,
+      "text": "AI to",
+      "words": [
+        {
+          "id": "caption-word-32-0",
+          "text": "AI",
+          "start": 28.539,
+          "end": 28.709
+        },
+        {
+          "id": "caption-word-32-1",
+          "text": "to",
+          "start": 28.749,
+          "end": 28.899
+        }
+      ]
+    },
+    {
+      "id": "caption-group-33",
+      "frame": 5,
+      "start": 28.899,
+      "end": 29.419,
+      "text": "build,",
+      "words": [
+        {
+          "id": "caption-word-33-0",
+          "text": "build,",
+          "start": 28.899,
+          "end": 29.369
+        }
+      ]
+    },
+    {
+      "id": "caption-group-34",
+      "frame": 5,
+      "start": 29.419,
+      "end": 30.009,
+      "text": "not running",
+      "words": [
+        {
+          "id": "caption-word-34-0",
+          "text": "not",
+          "start": 29.419,
+          "end": 29.529
+        },
+        {
+          "id": "caption-word-34-1",
+          "text": "running",
+          "start": 29.569,
+          "end": 30.009
+        }
+      ]
+    },
+    {
+      "id": "caption-group-35",
+      "frame": 5,
+      "start": 30.009,
+      "end": 30.389,
+      "text": "a model",
+      "words": [
+        {
+          "id": "caption-word-35-0",
+          "text": "a",
+          "start": 30.009,
+          "end": 30.069
+        },
+        {
+          "id": "caption-word-35-1",
+          "text": "model",
+          "start": 30.069,
+          "end": 30.389
+        }
+      ]
+    },
+    {
+      "id": "caption-group-36",
+      "frame": 5,
+      "start": 30.389,
+      "end": 30.882,
+      "text": "team.",
+      "words": [
+        {
+          "id": "caption-word-36-0",
+          "text": "team.",
+          "start": 30.389,
+          "end": 30.849
+        }
+      ]
+    },
+    {
+      "id": "caption-group-37",
+      "frame": 6,
+      "start": 30.882,
+      "end": 31.352,
+      "text": "Follow if",
+      "words": [
+        {
+          "id": "caption-word-37-0",
+          "text": "Follow",
+          "start": 30.882,
+          "end": 31.202
+        },
+        {
+          "id": "caption-word-37-1",
+          "text": "if",
+          "start": 31.202,
+          "end": 31.292
+        }
+      ]
+    },
+    {
+      "id": "caption-group-38",
+      "frame": 6,
+      "start": 31.352,
+      "end": 33.042,
+      "text": "you're breaking into PM.",
+      "words": [
+        {
+          "id": "caption-word-38-0",
+          "text": "you're",
+          "start": 31.352,
+          "end": 31.812
+        },
+        {
+          "id": "caption-word-38-1",
+          "text": "breaking",
+          "start": 31.812,
+          "end": 32.412
+        },
+        {
+          "id": "caption-word-38-2",
+          "text": "into",
+          "start": 32.422,
+          "end": 32.562
+        },
+        {
+          "id": "caption-word-38-3",
+          "text": "PM.",
+          "start": 32.562,
+          "end": 33.042
+        }
+      ]
+    },
+    {
+      "id": "caption-group-39",
+      "frame": 6,
+      "start": 33.042,
+      "end": 33.502,
+      "text": "Next up,",
+      "words": [
+        {
+          "id": "caption-word-39-0",
+          "text": "Next",
+          "start": 33.042,
+          "end": 33.202
+        },
+        {
+          "id": "caption-word-39-1",
+          "text": "up,",
+          "start": 33.202,
+          "end": 33.452
+        }
+      ]
+    },
+    {
+      "id": "caption-group-40",
+      "frame": 6,
+      "start": 33.502,
+      "end": 34.542,
+      "text": "I build one.",
+      "words": [
+        {
+          "id": "caption-word-40-0",
+          "text": "I",
+          "start": 33.502,
+          "end": 33.572
+        },
+        {
+          "id": "caption-word-40-1",
+          "text": "build",
+          "start": 33.572,
+          "end": 33.942
+        },
+        {
+          "id": "caption-word-40-2",
+          "text": "one.",
+          "start": 33.942,
+          "end": 34.422
+        }
+      ]
+    }
+  ]
+}

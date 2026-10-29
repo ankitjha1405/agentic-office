@@ -1,0 +1,173 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "caption_track_kind_missing",
+        "severity": "warning",
+        "message": "<div id=\"el-captions\"> looks like captions but is not marked as such, so the timeline cannot group it on the caption track.",
+        "selector": "#el-captions",
+        "dataAttributes": {},
+        "sourceFile": "/Users/ankitkumar/Documents/Dummy Claude Project/projects/agentic-office/products/the-early-pm/build/2026-11-03/index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add data-track-kind=\"captions\" to <div id=\"el-captions\">."
+      }
+    ],
+    "filesScanned": 8
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 1,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 1.906,
+        "selector": "#hook01-stage",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -1.66,
+          "top": -12.48,
+          "right": 1100.8,
+          "bottom": 1947.46,
+          "width": 1102.46,
+          "height": 1959.94
+        },
+        "containerSelector": "#el-01-hook > div:nth-of-type(1)",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1920,
+          "width": 1080,
+          "height": 1920
+        },
+        "overflow": {
+          "right": 20.8,
+          "top": 12.48,
+          "bottom": 27.46
+        },
+        "dataAttributes": {
+          "data-start": "0",
+          "data-duration": "3.2",
+          "data-track-index": "2"
+        },
+        "sourceFile": "compositions/frames/01-hook.html",
+        "bbox": {
+          "x": -1.66,
+          "y": -12.48,
+          "width": 1102.46,
+          "height": 1959.94
+        },
+        "firstSeen": 1.906,
+        "lastSeen": 1.906,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          1.906
+        ]
+      }
+    ],
+    "duration": 34.305,
+    "samples": [
+      1.906,
+      5.717,
+      9.529,
+      13.341,
+      17.153,
+      20.964,
+      24.776,
+      28.588,
+      32.399
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 1,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.32:1; WCAG AA requires 3:1.",
+        "text": "0.0",
+        "fg": "rgb(80,80,72)",
+        "bg": "rgb(17,17,17)",
+        "ratio": 2.32,
+        "requiredRatio": 3,
+        "suggestedColor": "rgb(97,97,90)",
+        "large": true,
+        "selector": "#n03-count",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-the-number.html",
+        "bbox": {
+          "x": 78.53697204589844,
+          "y": 662.722900390625,
+          "width": 180.29188537597656,
+          "height": 126.31640625
+        },
+        "time": 9.529,
+        "times": [
+          9.529
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.906,
+      9.529,
+      17.153,
+      24.776,
+      32.399
+    ],
+    "checked": 28,
+    "passed": 27
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

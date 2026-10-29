@@ -1,0 +1,118 @@
+<template>
+  <div id="root" data-composition-id="06-cta" data-start="0" data-duration="3.563" data-width="1080" data-height="1920">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=IBM+Plex+Mono:wght@500&display=swap");
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+      }
+      #root .clip {
+        position: absolute;
+        inset: 0;
+      }
+      #cta06-ground {
+        background: #111111;
+      }
+      #root .cta06-kicker,
+      #root .cta06-next,
+      #root .cta06-echo {
+        position: absolute;
+        left: 80px;
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+      }
+      #root .cta06-kicker {
+        top: 318px;
+        font-size: 30px;
+        color: #e85d26;
+      }
+      #root .cta06-line {
+        position: absolute;
+        left: 72px;
+        font-family: "Barlow", sans-serif;
+        font-weight: 900;
+        font-size: 206px;
+        line-height: 0.88;
+        letter-spacing: -0.04em;
+        text-transform: lowercase;
+        white-space: nowrap;
+        transform-origin: 0% 60%;
+      }
+      #root .cta06-cream { color: #f0ece5; }
+      #root .cta06-orange { color: #e85d26; }
+      #root #cta06-l1 { top: 400px; }
+      #root #cta06-l2 { top: 582px; }
+      #root #cta06-l3 { top: 764px; }
+      #root .cta06-rule {
+        position: absolute;
+        left: 80px;
+        top: 985px;
+        width: 36px;
+        height: 2px;
+        background: #e85d26;
+        transform-origin: 0% 50%;
+      }
+      #root .cta06-next {
+        top: 1012px;
+        font-size: 36px;
+        color: #f0ece5;
+      }
+      #root .cta06-echo {
+        top: 1080px;
+        font-size: 26px;
+        color: #888880;
+      }
+    </style>
+
+    <div id="cta06-ground" class="clip" data-start="0" data-duration="3.563" data-track-index="0"></div>
+
+    <div id="cta06-stage" class="clip" data-start="0" data-duration="3.563" data-track-index="1">
+      <div class="cta06-kicker" id="cta06-kicker">FOLLOW · BREAKING INTO PM</div>
+      <div class="cta06-line cta06-cream" id="cta06-l1">pm, but</div>
+      <div class="cta06-line cta06-orange" id="cta06-l2">you can</div>
+      <div class="cta06-line cta06-orange" id="cta06-l3">build</div>
+      <div class="cta06-rule" id="cta06-rule"></div>
+      <div class="cta06-next" id="cta06-next">NEXT: I BUILD ONE →</div>
+      <div class="cta06-echo" id="cta06-echo">= THE REAL AI PM</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      (function () {
+        window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
+        // One beat grid drives every hit (kinetic-beat-slam); VO: "Follow if you're breaking into PM. / Next up, I build one."
+        const BEATS = { kicker: 0.05, l1: 0.25, l2: 1.5, l3: 1.8, rule: 2.6, next: 2.65, echo: 2.95 };
+
+        tl.fromTo("#cta06-kicker", { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: "expo.out" }, BEATS.kicker);
+        // Scale + blur slam
+        tl.fromTo(
+          "#cta06-l1",
+          { scale: 1.45, filter: "blur(16px)", opacity: 0 },
+          { scale: 1, filter: "blur(0px)", opacity: 1, duration: 0.45, ease: "power4.out" },
+          BEATS.l1,
+        );
+        // Side snap
+        tl.fromTo("#cta06-l2", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, BEATS.l2);
+        // Rise + rotate, overshoot pop on the payoff word
+        tl.fromTo(
+          "#cta06-l3",
+          { y: 90, rotation: 6, opacity: 0 },
+          { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: "back.out(2)" },
+          BEATS.l3,
+        );
+        tl.fromTo("#cta06-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, BEATS.rule);
+        tl.fromTo("#cta06-next", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "circ.out" }, BEATS.next);
+        tl.fromTo("#cta06-echo", { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, BEATS.echo);
+        // Final frame: held read, no exit.
+
+        window.__timelines["06-cta"] = tl;
+      })();
+    </script>
+  </div>
+</template>

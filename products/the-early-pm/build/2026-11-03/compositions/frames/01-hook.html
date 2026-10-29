@@ -1,0 +1,162 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    /* shortcut: Barlow has no file in assets/fonts, so this points at Google's latin woff2 (inlined at build); stage a local woff2 for offline/cloud renders */
+    @font-face {
+      font-family: "Barlow";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url(https://fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E3j-ws51ostz0rdg.woff2) format("woff2");
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      container-type: size;
+      color: #f0ece5;
+      font-family: "Barlow", sans-serif;
+    }
+    #hook01-ground {
+      position: absolute;
+      inset: 0;
+      background-color: #111111;
+    }
+    /* faint 1px hairline grid, background role */
+    #hook01-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.45;
+      background-image:
+        repeating-linear-gradient(to right, #282826 0 1px, transparent 1px 120px),
+        repeating-linear-gradient(to bottom, #282826 0 1px, transparent 1px 120px);
+      background-position: 80px 60px;
+    }
+    #hook01-stage {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+    }
+    .hook01-word {
+      position: absolute;
+      left: 80px;
+      margin: 0;
+      font-weight: 900;
+      font-size: 16.667cqw; /* 180px on 1080 — "products" ≈ 690px, inside the 770px band */
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+      text-transform: lowercase;
+      white-space: nowrap;
+      color: #f0ece5;
+    }
+    #hook01-aipm { top: 300px; }
+    #hook01-ai { top: 770px; }
+    #hook01-products { top: 930px; }
+    .hook01-strike {
+      position: absolute;
+      left: -12px;
+      right: -12px;
+      top: 60%;
+      height: 18px;
+      margin-top: -9px;
+      background-color: #e85d26;
+    }
+    /* "≠" built from flat bars: Barlow's Google subset has no U+2260 glyph */
+    #hook01-neq {
+      position: absolute;
+      left: 80px;
+      top: 490px;
+      width: 260px;
+      height: 230px;
+    }
+    .hook01-neq-bar {
+      position: absolute;
+      left: 10px;
+      width: 240px;
+      height: 36px;
+      background-color: #e85d26;
+    }
+    #hook01-neq-top { top: 62px; }
+    #hook01-neq-bot { top: 132px; }
+    #hook01-neq-slash-wrap {
+      position: absolute;
+      left: 112px;
+      top: 0;
+      width: 36px;
+      height: 230px;
+      transform: rotate(28deg);
+    }
+    #hook01-neq-slash {
+      position: absolute;
+      inset: 0;
+      background-color: #e85d26;
+    }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-start="0" data-duration="3.2" data-width="1080" data-height="1920">
+    <div id="hook01-ground" class="clip" data-start="0" data-duration="3.2" data-track-index="0"></div>
+    <div id="hook01-grid" class="clip" data-start="0" data-duration="3.2" data-track-index="1"></div>
+
+    <div id="hook01-stage" class="clip" data-start="0" data-duration="3.2" data-track-index="2">
+      <p id="hook01-aipm" class="hook01-word">ai pm</p>
+
+      <div id="hook01-neq" role="img" aria-label="≠">
+        <div id="hook01-neq-top" class="hook01-neq-bar"></div>
+        <div id="hook01-neq-bot" class="hook01-neq-bar"></div>
+        <div id="hook01-neq-slash-wrap"><div id="hook01-neq-slash"></div></div>
+      </div>
+
+      <p id="hook01-ai" class="hook01-word">ai<span id="hook01-strike-ai" class="hook01-strike"></span></p>
+      <p id="hook01-products" class="hook01-word">products<span id="hook01-strike-products" class="hook01-strike"></span></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // Macro: slow push on the whole poster so the hold never freezes
+      tl.fromTo("#hook01-stage", { scale: 1 }, { scale: 1.035, duration: 3.2, ease: "none", transformOrigin: "80px 600px" }, 0);
+
+      // Scene 1 (0.0–0.3): "ai pm" slams in at frame 0
+      tl.fromTo("#hook01-aipm",
+        { opacity: 0, scale: 1.5, transformOrigin: "0% 50%" },
+        { opacity: 1, scale: 1, duration: 0.2, ease: "power4.out" }, 0);
+
+      // Scene 2a (0.33, "doesn't"): orange ≠ punches in — bars slam, slash cuts through
+      tl.fromTo("#hook01-neq",
+        { opacity: 0, scale: 2.2, rotation: -8, transformOrigin: "50% 50%" },
+        { opacity: 1, scale: 1, rotation: 0, duration: 0.32, ease: "back.out(2.2)" }, 0.33);
+      tl.fromTo("#hook01-neq-slash",
+        { scaleY: 0, transformOrigin: "50% 0%" },
+        { scaleY: 1, duration: 0.18, ease: "power4.out" }, 0.45);
+
+      // Scene 2b (1.28, "managing … AI products"): "ai products" slams in below
+      tl.fromTo("#hook01-ai",
+        { opacity: 0, scale: 1.5, transformOrigin: "0% 50%" },
+        { opacity: 1, scale: 1, duration: 0.2, ease: "power4.out" }, 1.28);
+      tl.fromTo("#hook01-products",
+        { opacity: 0, scale: 1.5, transformOrigin: "0% 50%" },
+        { opacity: 1, scale: 1, duration: 0.2, ease: "power4.out" }, 1.38);
+
+      // Scene 3 (1.98, "AI products"): fire-orange strike wipes left→right across both lines, then hold
+      tl.fromTo("#hook01-strike-ai",
+        { scaleX: 0, transformOrigin: "0% 50%" },
+        { scaleX: 1, duration: 0.22, ease: "power3.inOut" }, 1.98);
+      tl.fromTo("#hook01-strike-products",
+        { scaleX: 0, transformOrigin: "0% 50%" },
+        { scaleX: 1, duration: 0.38, ease: "power3.inOut" }, 2.12);
+      // struck words recede so the strike reads; text stays (not an exit)
+      tl.fromTo(["#hook01-ai", "#hook01-products"],
+        { color: "#f0ece5" },
+        { color: "#888880", duration: 0.3, ease: "power2.out" }, 2.4);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>
