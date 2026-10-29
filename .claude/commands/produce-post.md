@@ -11,7 +11,7 @@ As Ankit (COO), for each date:
 2. **Script.** If the date has no pack in `workspace/confluence/products/the-early-pm/week-*-posts.md`, delegate to `scriptwriter` (Varun Khanna) with the same pack format as week 1: hypothesis, hook + 2 Trial Reel alt hooks, timed script or slide copy, on-screen text, caption (1 ask, 3 hashtags), sources, VERIFY flags on any unconfirmed number. Use the `ig-reel`, `ig-carousel`, `ig-caption` and `ig-human` skills. Set status Scripted.
 3. **Make it.** Output goes to `products/the-early-pm/ready/<date>/`.
    - Carousel: render 1080x1350 PNG slides with the `ig-carousel` skill as `slide-01.png`...
-   - Reel: 1080x1920 MP4, 20-40 s, faceless. Voiceover with Kokoro `af_heart` (spell hard words phonetically). Pick the video skill by fit (CEO decision 2026-10-30):
+   - Reel: 1080x1920 MP4, 20-40 s, faceless. Voiceover with Kokoro `af_heart` (spell hard words phonetically; "AI PM" comes out as one word, so write "A.I. P.M."). Run it locally via `kokoro-onnx` in a venv. Never let hyperframes fall back to HeyGen: it is a paid tool and needs CEO approval. Pick the video skill by fit (CEO decision 2026-10-30):
      - `hyperframes` (faceless-explainer workflow): default for text-card and number reels.
      - `onetake`: reels built from real UI or screen recordings. Noncommercial license: stop and ask the CEO before using it once the page earns money.
      - `lemo-opuscar`: only for a story told in an art style.
