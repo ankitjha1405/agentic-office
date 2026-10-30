@@ -10,7 +10,7 @@ updated: 2026-10-30
 
 One post a day, Mon to Fri, 19:30 IST. Mix: 3 career, 2 builder per week (60/40, see `workspace/confluence/marketing/research/2026-10-29-early-pm-keywords-viral.md`). Weeks 2 to 4 are a plan, not a promise: they get re-planned every Sunday from Insights.
 
-Status flow: Planned → Scripted → Edited → Ready → Posted. `/produce-post <date>` moves a row from Planned to Ready. Only the CEO posts, and only after approval.
+Status flow: Planned → Scripted → Edited → Ready → Posted. `/produce-post <date>` moves a row from Planned to Ready. `/insta-cycle` posts Ready rows on its own (standing CEO approval, 2026-10-30) and may re-plan rows from Insights.
 
 Ready files for each date land in `products/the-early-pm/ready/<date>/`.
 

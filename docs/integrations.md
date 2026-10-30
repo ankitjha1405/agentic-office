@@ -112,3 +112,23 @@ The steps above are written for macOS and Linux. On Windows (PowerShell), change
 | Issue stays in In Progress instead of In Review | Run `python3 tools/jira_sync.py setup`, or add the column by hand. |
 | Duplicate issues or pages | A state file was deleted. Delete the duplicates in Jira or Confluence; the state file is rebuilt as the sync runs. |
 | Want to see what would be sent | Prefix a command with `JIRA_DRY_RUN=1` or `CONFLUENCE_DRY_RUN=1`. |
+
+## Instagram (The Early PM)
+
+`/insta-cycle` posts reels, carousels and stories on its own, pulls Insights, and rewrites `insta-learnings.md`. It runs at 10:00 and 17:30 via `~/Library/LaunchAgents/club.foxo.insta-cycle.plist`. Your Mac must be awake. Output goes to `workspace/insta-cycle.log`. To stop all posting, create `products/the-early-pm/PAUSE`.
+
+One-time setup:
+
+1. Make the Instagram account a Business or Creator account and link it to a Facebook Page.
+2. Meta: create a Business-type app at developers.facebook.com. Add the Instagram Graph API and Facebook Login products.
+3. Scalekit: sign up at app.scalekit.com. Go to AgentKit > Connections and create an Instagram connection. Choose "Use your own credentials", and enter the Meta app's App ID and App secret. Copy the redirect URI into Facebook Login > Settings > Valid OAuth Redirect URIs.
+4. Cloudinary: sign up for the free tier. Copy the cloud name, API key and API secret.
+5. Stories token: in Graph API Explorer, generate a user token with `instagram_basic`, `instagram_content_publish` and `pages_show_list`. Exchange it for a long-lived token (60 days). Read `IG_USER_ID` from `me/accounts?fields=instagram_business_account`.
+6. Fill in the Instagram block of `.env` (see `.env.example`).
+7. Install the SDK and sign in once:
+   ```bash
+   python3 -m venv .venv-insta && .venv-insta/bin/pip install scalekit-sdk-python
+   .venv-insta/bin/python tools/insta.py auth      # open the printed link, sign in to Instagram
+   .venv-insta/bin/python tools/insta.py insights  # should save a JSON file of recent posts
+   ```
+The stories token expires after 60 days. Renew it before then, or story posts will fail.

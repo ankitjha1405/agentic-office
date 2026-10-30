@@ -89,7 +89,7 @@ The task file is the source of truth. A hook (`tools/jira_sync.py`) mirrors it a
 | Moving capacity between departments | COO (Ankit) with the affected leads |
 | New product, major budget, new paid tool or spend of any amount | **CEO approval required** |
 | Production release or deploy | **CEO approval required**, after release gates pass |
-| Public publishing (posts, emails, outreach sent to real people) | **CEO approval required** |
+| Public publishing (posts, emails, outreach sent to real people) | **CEO approval required**. Exception: The Early PM Instagram posts via `/insta-cycle` (standing approval, `workspace/approvals/2026-10-30-standing-instagram-autopost.md`) |
 | Access to personal or customer data | **CEO approval required** |
 | Hiring, retiring or changing an agent's permissions | **CEO approval required** (People lead proposes) |
 | Serious security, privacy or legal risk | Chief Risk Officer escalates straight to CEO |
@@ -114,6 +114,7 @@ Run these with the slash commands in `.claude/commands/`.
 | Weekly | Priorities, risks, decisions | `/weekly-review` |
 | Any time | List what is waiting for CEO approval | `/approvals` |
 | Any time | Bring in CEO comments from Jira | `/pull-comments` |
+| Twice daily (launchd) | The Early PM Instagram: measure, learn, make, post | `/insta-cycle` |
 
 ## Keep usage low
 

@@ -6,3 +6,5 @@ workspace/jira/.jira-sync.log
 workspace/jira/.jira-state.json
 workspace/confluence/.confluence-sync.log
 workspace/confluence/.confluence-state.json
+.venv-insta/
+workspace/insta-cycle.log

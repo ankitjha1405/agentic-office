@@ -19,4 +19,4 @@ As Ankit (COO), for each date:
    - Burn in captions. Keep text inside the 4:5 safe area so the grid crop works.
 4. **Pack.** In the same folder write `caption.txt` (paste-ready), `alt-hooks.txt`, and `CHECKLIST.md`: every VERIFY item, the post time, and the cover frame.
 5. Watch or view the output once before calling it done. Set the calendar row to Edited, then Ready when nothing is left in `TODO.md`. Log it in the MKT task.
-6. Never post, schedule or upload anything. Report to the CEO: what is ready, what needs them (VERIFY checks, recordings), and the folder path.
+6. Never post, schedule or upload anything here; posting is `/insta-cycle`'s job. Report to the CEO: what is ready, what needs them (VERIFY checks, recordings), and the folder path.
