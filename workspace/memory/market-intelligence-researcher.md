@@ -1,0 +1,3 @@
+# Memory: market-intelligence-researcher (Kavya Raghunathan)
+
+- 2026-10-30 · PROD-1 GSoC orgs research. Decision: used the GSoC archive JSON API (summerofcode.withgoogle.com/api/archive/programs/<year>/organizations/) for all 11 yearly lists. Outcome: 2025 = 185 orgs, 2026 = 183 found vs 185 official; 2021 (202), 2024 (195), 2025 (185) match Google blog counts. 43 orgs at 11/11 in my screen. Lesson: the fetch tool summarizes 100k-char chunks and drops orgs cut at chunk edges, so single-year N flags need a recheck. The per-org endpoint `.../organizations/<slug>/` gives project counts and chat links; 2026 per-org returned 404. Output: workspace/confluence/research/gsoc-orgs-research.md. Source: GSoC archive API, accessed 2026-10-30.
