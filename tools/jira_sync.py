@@ -98,7 +98,7 @@ def sync_file(path, s, names):
     meta, sections, entries, digest = parse(path)
     key = meta["key"]
     issue = s["issues"].get(key)
-    if issue and issue["hash"] == digest:
+    if issue and issue.get("hash") == digest:
         return
     cat = meta.get("category") if meta.get("category") in TARGETS else "Not Started"
     labels = ["office", "office-" + key, DEPTS.get(key.split("-")[0], "company")]
@@ -113,10 +113,15 @@ def sync_file(path, s, names):
         except RuntimeError:  # project may not have Story/Bug/Epic: fall back to Task
             fields["issuetype"] = {"name": "Task"}
             created = call("POST", "/issue", {"fields": fields})
-        issue = s["issues"][key] = {"key": created["key"], "log": 0}
+        # save before any follow-up call can fail, so a rerun updates this issue instead of creating another
+        issue = s["issues"][key] = {"key": created["key"], "log": 0, "category": "Not Started",
+                                    "status": meta.get("status"), "owner": meta.get("owner")}
+        save_state(s)
         comment(issue["key"], f"Ticket created by {who(meta.get('reporter'), names)}. Owner: {who(meta.get('owner'), names)}. Status: {meta.get('status')}.")
         if cat != "Not Started":
             transition(issue["key"], cat, meta.get("status", ""))
+            issue["category"] = cat
+            save_state(s)
     else:
         call("PUT", f"/issue/{issue['key']}", {"fields": fields})
         if issue.get("category") != cat:
@@ -129,6 +134,8 @@ def sync_file(path, s, names):
             comment(issue["key"], f"Owner changed {who(issue.get('owner'), names)} → {who(meta.get('owner'), names)}.")
     for entry in entries[issue["log"]:]:
         comment(issue["key"], entry)
+        issue["log"] += 1
+        save_state(s)
     issue.update(log=len(entries), hash=digest, category=cat, status=meta.get("status"), owner=meta.get("owner"))
     save_state(s)
 
