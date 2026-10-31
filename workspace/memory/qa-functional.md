@@ -1,0 +1,1 @@
+- 2026-10-31 · qa-functional (Divya): ENG-19 AOSSIE Template-Repo #73 QA verdict ACCEPT-WITH-NOTES. Diff matches, 13/13 groups, YAML exit 0, issue still unassigned, no open PR. Note: add AI Notice section to PR text; group-name uniqueness not confirmed in docs; untested on real Dependabot.
