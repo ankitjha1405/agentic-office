@@ -269,7 +269,7 @@ def sync_doc(path, folder, defaults, s, names):
     digest = hashlib.md5(text.encode()).hexdigest()
     rel = os.path.relpath(path, ROOT)
     page = s["pages"].get(rel)
-    if page and page["hash"] == digest:
+    if page and page.get("hash") == digest:
         return
     meta, body = split_frontmatter(text)
     meta = defaults | meta
@@ -291,16 +291,19 @@ def sync_doc(path, folder, defaults, s, names):
             req["title"] = f"{title} ({rel})"
             created = call("POST", "/api/v2/pages", req)
         page = s["pages"][rel] = {"id": created["id"], "version": 1, "title": req["title"]}
-        owner = meta.get("owner")
-        labels = [{"prefix": "global", "name": n} for n in
-                  ["office", f"owner-{owner}" if owner else "owner-missing",
-                   re.sub(r"[^a-z0-9-]", "", meta.get("department", "").lower().replace(" ", "-").replace("&", "and"))] if n]
-        call("POST", f"/rest/api/content/{page['id']}/label", labels)
+        save_state(s)  # before the label call, so a failure there cannot make the rerun create a second page
     else:
         page["version"] += 1
         call("PUT", f"/api/v2/pages/{page['id']}", {"id": page["id"], "status": "current", "title": page["title"],
                                                      "body": {"representation": "storage", "value": storage},
                                                      "version": {"number": page["version"], "message": f"Synced from {rel}"}})
+    if not page.get("labeled", "hash" in page):  # pages synced before this flag existed already have labels
+        owner = meta.get("owner")
+        labels = [{"prefix": "global", "name": n} for n in
+                  ["office", f"owner-{owner}" if owner else "owner-missing",
+                   re.sub(r"[^a-z0-9-]", "", meta.get("department", "").lower().replace(" ", "-").replace("&", "and"))] if n]
+        call("POST", f"/rest/api/content/{page['id']}/label", labels)
+        page["labeled"] = True
     page["hash"] = digest
     save_state(s)
 
