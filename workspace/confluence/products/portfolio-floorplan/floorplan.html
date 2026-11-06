@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio floorplan</title>
+<!-- DES-1 · owner: visual-designer (Zoya Mirza) · spec: visual-spec.md · data date 2026-11-06 · to update, edit the PROJECTS array below -->
+<style>
+:root{--bg:#F6F3EC;--wall:#2B2F36;--room:#FFFFFF;--page:#EEF2F7;--corridor:#E3DCCB;--text:#1B1E23;--accent:#1F7A5C;--gated:#A34A12;--excluded:#787D86;--dot-ink:#FFFFFF;
+--w1:#3B6FD4;--w2:#8E4FD0;--w3:#1F9AA8;--w4:#C2417A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14161A;--wall:#C9CDD4;--room:#1E2228;--page:#262B33;--corridor:#323843;--text:#ECEEF2;--accent:#4CC9A0;--gated:#F0A267;--excluded:#7B818B;--dot-ink:#14161A}}
+:root[data-theme=dark]{--bg:#14161A;--wall:#C9CDD4;--room:#1E2228;--page:#262B33;--corridor:#323843;--text:#ECEEF2;--accent:#4CC9A0;--gated:#F0A267;--excluded:#7B818B;--dot-ink:#14161A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:12px 16px}
+h1{margin:0;font-size:20px}
+header p{margin:2px 0 0;font-size:14px}
+.frame{margin:0 16px 16px;overflow:auto;border:1px solid var(--wall);border-radius:8px}
+svg{display:block;width:100%;min-width:900px;height:auto}
+svg text{fill:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+svg .mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.wt{font-size:20px;font-weight:600}.pn{font-size:16px;font-weight:600}.t12{font-size:12px}
+.wall{fill:var(--room);stroke:var(--wall);stroke-width:2.5}
+.live .wall{stroke:var(--accent)}
+.gated .wall{stroke:var(--gated);stroke-dasharray:9 5}
+.excluded .wall{stroke:var(--excluded);stroke-dasharray:9 5}
+.tag-gated{fill:var(--gated)!important;font-weight:600}.tag-live{fill:var(--accent)!important;font-weight:600}
+.lock{fill:none;stroke:var(--gated);stroke-width:1.6}.lockb{fill:var(--gated)}
+.cellbox{fill:var(--page);stroke:var(--wall);stroke-width:1.5}
+.cell.gated .cellbox{stroke:var(--gated);stroke-dasharray:5 3}
+.strip{stroke:var(--corridor);stroke-width:6;stroke-linecap:round;fill:none}
+.stripo{stroke:var(--wall);stroke-width:8;stroke-linecap:round;fill:none;opacity:.35}
+.gap{stroke:var(--corridor);stroke-width:5}.arc{fill:none;stroke:var(--wall);stroke-width:1.5}
+.arrow{fill:var(--wall)}
+.dot-c{fill:var(--accent)}.dot-s{fill:var(--wall)}.dl{fill:var(--dot-ink)!important;font-weight:700}
+.hatch{stroke:var(--excluded);stroke-width:2;opacity:.3}
+.room{cursor:pointer;outline:none}
+.room:hover .wall,.room:focus-visible .wall,.room.sel .wall{stroke:var(--text);stroke-width:4.5}
+.room:focus-visible .focus{stroke:var(--text);stroke-width:2;fill:none}
+.focus{fill:none;stroke:none}
+.lobby{fill:var(--corridor);opacity:.55}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#panel{position:fixed;top:0;right:0;bottom:0;width:min(380px,100vw);background:var(--room);color:var(--text);border-left:2px solid var(--wall);padding:16px;overflow:auto;z-index:5;box-shadow:-4px 0 16px rgba(0,0,0,.18)}
+#panel[hidden]{display:none}
+#panel h2{margin:0 0 4px;font-size:20px}
+#panel button{font:inherit;color:var(--text);background:var(--page);border:1.5px solid var(--wall);border-radius:6px;padding:6px 12px;cursor:pointer;float:right}
+#panel ul{list-style:none;margin:8px 0 0;padding:0}
+#panel li{padding:3px 0;font-size:14px}
+#panel code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+#panel .m{display:inline-block;min-width:1.4em;text-align:center;border:1.5px solid var(--wall);border-radius:50%;font-weight:700;font-size:12px;margin-right:6px}
+#panel .st{font-weight:700}
+</style>
+</head>
+<body>
+<header><h1>Portfolio floorplan</h1><p>Every project as a room, its pages as small rooms. Select a room for details. Data date 2026-11-06.</p></header>
+<div class="frame"><svg id="map" role="group" aria-label="Portfolio floorplan: 17 projects as rooms, grouped into four wings around a central lobby"></svg></div>
+<aside id="panel" hidden aria-label="Project details"></aside>
+<ul class="sr" id="sr" aria-label="Portfolio floorplan as a list"></ul>
+<script>
+const DATE='2026-11-06';
+const c=(path,auth,name)=>({name:name||path,path,auth:!!auth,src:'code'});
+const s=(path,auth,name)=>({name:name||path,path,auth:!!auth,src:'site'});
+const hub=(a,list)=>list.flatMap(p=>[[a,p],[p,a]]);
+
+// wing keys: products, foxo, sites, lab (order inside a wing = packing order)
+const WINGS={products:{title:'Products',hue:'--w1',side:'L',row:'top'},foxo:{title:'Foxo and work',hue:'--w2',side:'R',row:'top'},sites:{title:'Sites and portfolio',hue:'--w3',side:'L',row:'bot'},lab:{title:'Experiments and excluded',hue:'--w4',side:'R',row:'bot'}};
+const PROJECTS=[
+{project:'kosh',wing:'products',kind:'Voice-first finance coach',url:'https://kosh-murex.vercel.app',status:'gated',reason:'',note:'Gating inferred from code. Public front door is /welcome; root / needs login.',
+ pages:[c('/welcome'),c('/signup'),c('/login'),c('/onboarding'),c('/',1),c('/spends',1),c('/savings',1),c('/profile',1),c('/chat',1)],
+ links:[['/signup','/onboarding'],['/onboarding','/'],['/','/spends'],['/','/savings'],['/','/onboarding']]},
+{project:'oscar-board',wing:'products',kind:'Personal kanban',url:'https://oscar-board.vercel.app',status:'gated',reason:'',note:'Everything except /login.html needs login. Task and project dialogs are modals, not shown.',
+ pages:[c('/login.html'),c('/',1)],links:[['/login.html','/'],['/','/login.html']]},
+{project:'product-quest',wing:'products',kind:'PM practice platform',url:'https://product-quest-two.vercel.app',status:'gated',reason:'',note:'Gating inferred from code (per page, not verified). About 35 routes shown as groups; the count in brackets is routes in the group.',
+ pages:[c('/'),c('/login'),c('/signup/*',0,'/signup/* (2)'),c('/forgot-password/*',0,'/forgot-password/* (2)'),c('/diagnostic/*',0,'/diagnostic/* (4)'),c('/onboarding/*',1,'/onboarding/* (7)'),c('/home',1),c('/cases/*',1,'/cases/* (3)'),c('/learning/*',1,'/learning/* (4)'),c('/games/*',1,'/games/* (2)'),c('/jobs',1),c('/mentorship',1),c('/plan',1),c('/profile',1),c('/upgrade',1)],
+ links:[['/','/diagnostic/*'],['/','/cases/*'],['/','/mentorship'],['/','/onboarding/*'],['/','/login'],['/','/signup/*'],['/onboarding/*','/home'],['/home','/cases/*'],['/home','/learning/*'],['/home','/games/*'],['/home','/jobs'],['/home','/mentorship'],['/home','/plan'],['/home','/profile'],['/home','/upgrade']]},
+{project:'haunted-terminal',wing:'products',kind:'Terminal ghost + install page',url:'https://haunted-terminal-lovat.vercel.app',status:'live',reason:'',note:'Single page with sections; no internal links.',
+ pages:[c('/')],links:[]},
+{project:'daily-quest',wing:'products',kind:'Daily learning feed',url:'https://daily-quest-eta-sandy.vercel.app',status:'live',reason:'',note:'Hash routes on one page. No login; sync is an optional passphrase. Top nav links all four views.',
+ pages:[c('#today'),c('#library'),c('#plan'),c('#progress')],links:[['#today','#library'],['#today','#plan'],['#today','#progress']]},
+{project:'primer-dashboard',wing:'products',kind:'Internal member dashboard',url:'https://primer-dashboard-five.vercel.app',status:'gated',reason:'',note:'Fully login-gated internal tool. Structure only; no member data shown.',
+ pages:[c('/login'),c('/',1),c('/member/[code]',1)],links:[['/login','/'],['/','/login'],['/','/member/[code]']]},
+{project:'gitavatar',wing:'products',kind:'Avatar to ASCII art',url:'https://gitavatar.vercel.app',status:'live',reason:'',note:'Single screen; no login, no API.',
+ pages:[c('/')],links:[]},
+{project:'hustlkr',wing:'products',kind:'Personal-finance app',url:'https://hustlkr.in',status:'gated',reason:'',note:'Gating inferred from code (middleware); the live landing page / is public. About 32 routes shown as groups; the 17 calculators are one room.',
+ pages:[c('/'),c('/login'),c('/onboarding'),c('/privacy'),c('/home',1),c('/profile',1),c('/journey/*',1,'/journey/* (3)'),c('/articles/[slug]',1),c('/tools/*',1,'/tools/* (17)'),c('/elite/*',1,'/elite/* (3)')],
+ links:[['/','/login'],['/','/onboarding'],['/','/privacy'],['/login','/onboarding'],['/onboarding','/home'],['/home','/journey/*'],['/home','/tools/*'],['/home','/elite/*'],['/home','/profile']]},
+
+{project:'foxo-heart-age',wing:'foxo',kind:'Health calculators',url:'https://foxo-heart-age.vercel.app',status:'live',reason:'',note:'Hash routes. Only the first 6 tools were listed; more may exist. Every tool links back to the hub.',
+ pages:[c('#/'),c('#/age-of-heart-calculator'),c('#/framingham-heart-risk-calculator'),c('#/bmr-calculator'),c('#/tdee-calculator'),c('#/ascvd-score-calculator'),c('#/calories-burned-calculator')],
+ links:hub('#/',['#/age-of-heart-calculator','#/framingham-heart-risk-calculator','#/bmr-calculator','#/tdee-calculator','#/ascvd-score-calculator','#/calories-burned-calculator'])},
+{project:'foxoclub',wing:'foxo',kind:'Longevity marketing site',url:'https://foxoclub.vercel.app',status:'live',reason:'',note:'One route with sections. Nav anchors; "Get Primer" goes to #pricing.',
+ pages:[c('/'),c('#primer'),c('#ome'),c('#pricing'),c('#faq')],links:[['/','#primer'],['/','#ome'],['/','#pricing'],['/','#faq']]},
+{project:'loan24-onboarding',wing:'foxo',kind:'Lending onboarding prototype',url:'https://loan24-onboarding.vercel.app',status:'live',reason:'',note:'Prototype, not a lender. One URL (/); screens are JS states grouped in 5 steps, bracket = screens in the step.',
+ pages:[c('step 1',0,'1 Identity (4)'),c('step 2',0,'2 Documents (2)'),c('step 3',0,'3 Details (3)'),c('step 4',0,'4 Premises (5)'),c('step 5',0,'5 Result (8)')],
+ links:[['step 1','step 2'],['step 2','step 3'],['step 3','step 4'],['step 4','step 5'],['step 5','step 4']]},
+{project:'loqelo-prelaunch',wing:'foxo',kind:'Waitlist pre-launch',url:'https://loqelo-prelaunch-iota.vercel.app',status:'live',reason:'',note:'Page and anchors; language switch EN/DE/NL/PL via ?lang=.',
+ pages:[c('/'),c('/privacy.html'),c('#how'),c('#inside'),c('#join'),c('#faq')],links:[['/','/privacy.html'],['/','#how'],['/','#inside'],['/','#join'],['/','#faq']]},
+
+{project:'portfolio-v2',wing:'sites',kind:'Personal portfolio',url:'https://ankitjha1405.tech',status:'live',reason:'',note:'The Vercel URL ankitjha1405.vercel.app redirects to this host. Links out to hustlkr and pmforces.',
+ pages:[c('/'),c('#featured-work'),c('#contact')],links:[['/','#featured-work'],['/','#contact']]},
+{project:'aurele-atelier',wing:'sites',kind:'Rings, watches, straps',url:'https://aurele-atelier.vercel.app',status:'live',reason:'',note:'demo-grade: placeholder contact form',
+ pages:[c('/'),c('#collection'),c('#atelier'),c('#contact')],links:[['/','#collection'],['/','#atelier'],['/','#contact']]},
+
+{project:'pmforces',wing:'lab',kind:'PM interview practice',url:'https://pmforces.vercel.app',status:'live',reason:'',note:'Seen on the live site only. Signed-in screens beyond /dashboard are unknown.',
+ pages:[s('/'),s('/questions'),s('/leaderboard'),s('/pricing'),s('/auth/signin'),s('/auth/signup'),s('/dashboard',1)],
+ links:[['/','/questions'],['/','/leaderboard'],['/','/pricing'],['/','/auth/signin'],['/','/auth/signup'],['/auth/signin','/dashboard'],['/auth/signup','/dashboard']]},
+{project:'v0-todo-list-app',wing:'lab',kind:'',url:'https://v0-todo-list-app-beta.vercel.app',status:'excluded',reason:'v0 demo',note:'',pages:[],links:[]},
+{project:'v0-todo-app-requirements',wing:'lab',kind:'',url:'https://v0-todo-app-requirements-eight.vercel.app',status:'excluded',reason:'v0 demo',note:'',pages:[],links:[]},
+];
+// outer corridors: project links out to another project (inventory-b: portfolio-v2 -> hustlkr, pmforces)
+const CROSS=[['portfolio-v2','hustlkr'],['portfolio-v2','pmforces']];
+
+/* ---------- layout ---------- */
+const NS='http://www.w3.org/2000/svg',W=1600,CH=7.4,G=14,WL=960,WR=580,LH=270,PAD=16;
+const snap=v=>Math.ceil(v/20)*20;
+const host=u=>new URL(u).host;
+function wrap(str,max){const t=str.split(/(?<=[-/. ])/),out=[];let cur='';for(const k of t){if((cur+k).trim().length>max&&cur){out.push(cur.trim());cur=k}else cur+=k}if(cur.trim())out.push(cur.trim());return out}
+function sizeRoom(p){
+  const ex=p.status==='excluded',n=p.pages.length;
+  const nameW=p.project.length*9.4,tagW=ex?0:64;
+  const r={p,n};
+  if(n){
+    const L=Math.min(18,Math.max(...p.pages.map(q=>q.name.length)));
+    r.lines=p.pages.map(q=>wrap(q.name,L));
+    r.cw=Math.max(100,Math.ceil(Math.max(...r.lines.flat().map(l=>l.length))*CH+16));
+    r.ml=Math.max(...r.lines.map(l=>l.length));
+    r.ch=10+16*r.ml+26;
+    r.cols=n>8?4:Math.min(n,3);r.rows=Math.ceil(n/r.cols);
+    r.gw=r.cols*r.cw+(r.cols-1)*G;r.gh=r.rows*r.ch+(r.rows-1)*G;
+  }else{r.gw=0;r.gh=0}
+  r.w=snap(Math.max(160,r.gw+2*PAD,nameW+tagW+2*PAD,(p.kind||('excluded: '+p.reason)).length*6.8+2*PAD));
+  r.hl=wrap(host(p.url),Math.floor((r.w-2*PAD)/7.4));
+  r.top=WINGS[p.wing].row==='bot';r.hl0=r.top?16*r.hl.length+6:0;r.head=(ex?64:60)+r.hl0;
+  r.foot=r.top?24:16*r.hl.length+24;
+  r.h=snap(Math.max(120,r.head+r.gh+r.foot+(n?10:0)));
+  return r;
+}
+function pack(items,width,gap){const rows=[];let x=0,row=null;
+  for(const r of items){if(!row||x+r.w>width){row={items:[],h:0,y:0};rows.push(row);x=0}
+    r.rx=x;row.items.push(r);x+=r.w+gap;row.h=Math.max(row.h,r.h)}
+  let y=0;for(const rw of rows){rw.y=y;y+=rw.h+gap}
+  return {rows,h:y-gap}}
+
+function layout(){
+  const rooms=PROJECTS.map(sizeRoom);
+  const wings={};
+  for(const k in WINGS){const w=WINGS[k];w.k=k;w.W=w.row==='bot'?(w.side==='L'?840:700):w.side==='L'?WL:WR;w.items=rooms.filter(r=>r.p.wing===k);w.pk=pack(w.items,w.W-2*PAD,PAD);w.h=w.pk.h+44+14+0}
+  const topH=Math.max(wings.products?0:0,WINGS.products.h,WINGS.foxo.h),botH=Math.max(WINGS.sites.h,WINGS.lab.h);
+  const y0=20,LT=y0+topH+10,LB=LT+LH,y2=LB+10,H=y2+botH+20;
+  for(const k in WINGS){const w=WINGS[k];w.x=w.side==='L'?20:1580-w.W;w.y=w.row==='top'?y0:y2;w.H=w.row==='top'?topH:botH;
+    for(const rw of w.pk.rows)for(const r of rw.items){
+      r.x=w.x+PAD+r.rx;
+      // top wings: bottom-align each row so doors sit on the lobby side; bottom wings: top-align
+      r.y=w.row==='top'?w.y+44+rw.y+(rw.h-r.h):w.y+14+rw.y;
+      r.door=w.row==='top'?'bottom':'top';}}
+  return {rooms,H,LT,LB,topH,botH};
+}
+
+/* ---------- drawing ---------- */
+const svg=document.getElementById('map');
+function el(tag,at,parent,text){const e=document.createElementNS(NS,tag);for(const k in at||{})e.setAttribute(k,at[k]);if(text!=null)e.textContent=text;(parent||svg).appendChild(e);return e}
+function lockIcon(g,x,y){el('rect',{x,y:y+5,width:10,height:8,rx:1.5,class:'lockb'},g);el('path',{d:`M${x+2},${y+5}V${y+3}a3,3 0 0 1 6,0V${y+5}`,class:'lock'},g)}
+function clip(a,b,hw,hh){const dx=b.x-a.x,dy=b.y-a.y,t=Math.min(dx?hw/Math.abs(dx):1e9,dy?hh/Math.abs(dy):1e9);return{x:a.x+dx*t,y:a.y+dy*t,vert:(dx?hw/Math.abs(dx):1e9)<(dy?hh/Math.abs(dy):1e9),dx,dy}}
+function doorMark(g,P){ // 14px gap in a wall + small arc, outward
+  const k=P.vert?Math.sign(P.dx):Math.sign(P.dy);
+  if(P.vert){el('line',{x1:P.x,y1:P.y-7,x2:P.x,y2:P.y+7,class:'gap'},g);el('path',{d:`M${P.x},${P.y+7}A${8},${8} 0 0 ${k>0?0:1} ${P.x+k*8},${P.y-1}`,class:'arc'},g)}
+  else{el('line',{x1:P.x-7,y1:P.y,x2:P.x+7,y2:P.y,class:'gap'},g);el('path',{d:`M${P.x-7},${P.y}A${8},${8} 0 0 ${k>0?0:1} ${P.x+1},${P.y+k*8}`,class:'arc'},g)}}
+function arrow(g,P,from){const dx=P.x-from.x,dy=P.y-from.y,l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l;
+  const bx=P.x-ux*7,by=P.y-uy*7;el('polygon',{points:`${P.x},${P.y} ${bx-uy*3.5},${by+ux*3.5} ${bx+uy*3.5},${by-ux*3.5}`,class:'arrow'},g)}
+
+function drawRoom(r,pos){
+  const p=r.p,st=p.status,g=el('g',{class:'room '+st,tabindex:0,role:'button','data-p':p.project,'aria-label':`${p.project}, ${st}${r.n?', '+r.n+' pages':''}${p.reason?', '+p.reason:''}`});
+  const {x,y,w,h}=r;
+  el('rect',{x,y,width:w,height:h,rx:10,class:'wall'},g);
+  if(st==='excluded'){const pid='hp'+p.project.replace(/\W/g,'');const pt=el('pattern',{id:pid,width:9,height:9,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},g);el('line',{x1:0,y1:0,x2:0,y2:9,class:'hatch'},pt);el('rect',{x:x+3,y:y+3,width:w-6,height:h-6,rx:8,fill:`url(#${pid})`,'pointer-events':'none'},g)}
+  const o=r.hl0;el('text',{x:x+PAD,y:y+26+o,class:'pn'},g,p.project);
+  if(st==='excluded')el('text',{x:x+PAD,y:y+46+o,class:'t12'},g,'excluded: '+p.reason);
+  else{el('text',{x:x+PAD,y:y+44+o,class:'t12'},g,p.kind);
+    if(st==='gated'){el('text',{x:x+w-PAD,y:y+26+o,'text-anchor':'end',class:'t12 tag-gated'},g,'login');lockIcon(g,x+w-PAD-46,y+13+o)}
+    else el('text',{x:x+w-PAD,y:y+26+o,'text-anchor':'end',class:'t12 tag-live'},g,'live')}
+  // pages
+  const ox=x+Math.round((w-r.gw)/2),oy=y+r.head,cen=[];
+  p.pages.forEach((q,i)=>{const cx=ox+(i%r.cols)*(r.cw+G),cy=oy+Math.floor(i/r.cols)*(r.ch+G);cen.push({q,x:cx,y:cy,mx:cx+r.cw/2,my:cy+r.ch/2})});
+  const byPath={};cen.forEach(o=>byPath[o.q.path]=o);
+  const ls=el('g',{},g),cs=el('g',{},g),ds=el('g',{},g);
+  for(const [a,b] of p.links){const A=byPath[a],B=byPath[b];if(!A||!B)throw Error('bad link '+p.project+' '+a+' '+b);
+    const pa=clip({x:A.mx,y:A.my},{x:B.mx,y:B.my},r.cw/2,r.ch/2),pb=clip({x:B.mx,y:B.my},{x:A.mx,y:A.my},r.cw/2,r.ch/2);
+    for(const cl of ['stripo','strip'])el('line',{x1:pa.x,y1:pa.y,x2:pb.x,y2:pb.y,class:cl},ls);
+    doorMark(ds,pa);doorMark(ds,pb);arrow(ds,{x:pb.x,y:pb.y},{x:pa.x,y:pa.y})}
+  cen.forEach(o=>{const q=o.q,cg=el('g',{class:'cell'+(q.auth?' gated':'')},cs);
+    el('rect',{x:o.x,y:o.y,width:r.cw,height:r.ch,rx:6,class:'cellbox'},cg);
+    r.lines[cen.indexOf(o)].forEach((ln,i)=>el('text',{x:o.x+8,y:o.y+18+i*16,class:'mono t12'},cg,ln));
+    const fy=o.y+r.ch-14;
+    el('circle',{cx:o.x+16,cy:fy,r:8,class:q.src==='code'?'dot-c':'dot-s'},cg);
+    el('text',{x:o.x+16,y:fy+4,'text-anchor':'middle',class:'t12 dl'},cg,q.src==='code'?'c':'s');
+    if(q.auth){el('text',{x:o.x+r.cw-8,y:fy+4,'text-anchor':'end',class:'t12 tag-gated'},cg,'login');lockIcon(cg,o.x+r.cw-8-30-14,fy-7)}});
+  // front door facing lobby + host label
+  const dy=r.door==='bottom'?y+h:y,dx=x+w/2;
+  const fd=el('g',{},g);el('line',{x1:dx-7,y1:dy,x2:dx+7,y2:dy,stroke:'var(--room)','stroke-width':5},fd);
+  const k=r.door==='bottom'?1:-1;el('path',{d:`M${dx-7},${dy}A8,8 0 0 ${k>0?0:1} ${dx+1},${dy+k*8}`,class:'arc'},fd);
+  const ly0=r.top?y+18:y+h-16*r.hl.length-8+12;
+  r.hl.forEach((ln,i)=>el('text',{x:dx,y:ly0+i*16,'text-anchor':'middle',class:'mono t12'},g,ln));
+  r.dx=dx;r.dy=dy;
+  g.addEventListener('click',()=>openPanel(p,g));
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPanel(p,g)}});
+  return g;
+}
+
+function legend(L,lx,LT,LB){
+  const ty=LT+58;el('text',{x:lx,y:ty,class:'wt'},svg,'Portfolio');
+  const it=[
+   g=>el('rect',{x:0,y:-6,width:28,height:16,rx:4,fill:'var(--room)',stroke:'var(--accent)','stroke-width':2.5},g),'Live room: solid wall',
+   g=>{el('rect',{x:0,y:-6,width:28,height:16,rx:4,fill:'var(--room)',stroke:'var(--gated)','stroke-width':2.5,'stroke-dasharray':'6 3'},g);lockIcon(g,9,-6)},'Gated: dashed wall, lock, login tag',
+   g=>{el('rect',{x:0,y:-6,width:28,height:16,rx:4,fill:'var(--room)',stroke:'var(--excluded)','stroke-width':2.5,'stroke-dasharray':'6 3'},g);el('path',{d:'M6,10L16,-6M14,10L24,-6',class:'hatch'},g)},'Excluded: grey, hatched, reason',
+   g=>{el('line',{x1:0,y1:2,x2:28,y2:2,stroke:'var(--wall)','stroke-width':2.5},g);el('line',{x1:7,y1:2,x2:21,y2:2,class:'gap'},g);el('path',{d:'M7,2A8,8 0 0 1 15,-6',class:'arc'},g)},'Door: 14px wall gap with arc',
+   g=>{el('line',{x1:0,y1:2,x2:20,y2:2,class:'stripo'},g);el('line',{x1:0,y1:2,x2:20,y2:2,class:'strip'},g);arrow(g,{x:28,y:2},{x:18,y:2})},'Corridor: link; arrow = one-way',
+   g=>{el('line',{x1:0,y1:2,x2:20,y2:2,class:'stripo'},g);el('line',{x1:0,y1:2,x2:20,y2:2,class:'strip'},g);arrow(g,{x:28,y:2},{x:18,y:2})},'Outer corridor: links to a project',
+   g=>{el('circle',{cx:10,cy:2,r:8,class:'dot-c'},g);el('text',{x:10,y:6,'text-anchor':'middle',class:'t12 dl'},g,'c')},'c = page read from code',
+   g=>{el('circle',{cx:10,cy:2,r:8,class:'dot-s'},g);el('text',{x:10,y:6,'text-anchor':'middle',class:'t12 dl'},g,'s')},'s = page seen on live site',
+   g=>el('rect',{x:0,y:-4,width:12,height:10,rx:2,fill:'var(--page)',stroke:'var(--wall)'},g),'Room size = page count only',
+   null,'Data date: '+DATE];
+  const colW=300,rowH=30;
+  for(let i=0;i<it.length;i+=2){const n=i/2,gx=lx+(n%3)*colW,gy=ty+34+Math.floor(n/3)*rowH;
+    const g=el('g',{class:'lg'},svg);g.setAttribute('transform','');g.removeAttribute('transform');
+    // draw swatch at absolute offset via nested group translate
+    const sw=el('g',{transform:`translate(${gx},${gy})`,class:'sw'},g);if(it[i])it[i](sw);
+    el('text',{x:gx+(it[i]?38:0),y:gy+4,class:'t12 lgt'},g,it[i+1])}
+  return {x:lx-8,y:LT+30,w:colW*3+16,h:LB-30-(LT+30)};
+}
+
+function build(){
+  svg.textContent='';
+  const L=layout(),{rooms,H,LT,LB}=L;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  el('rect',{x:0,y:0,width:W,height:H,fill:'var(--bg)'});
+  for(const k in WINGS){const w=WINGS[k];
+    el('rect',{x:w.x,y:w.y,width:w.W,height:w.H,rx:14,fill:`var(${w.hue})`,'fill-opacity':.12,class:'wing','data-w':k});
+    el('text',{x:w.x+PAD,y:w.row==='top'?w.y+30:w.y+w.H-14,class:'wt wtt'},svg,w.title)}
+  el('rect',{x:20,y:LT,width:W-40,height:LH,rx:14,class:'lobby'});
+  const by={};rooms.forEach(r=>{drawRoom(r);by[r.p.project]=r});
+  // outer corridors via lobby lanes
+  const a=by['portfolio-v2'],lanes={hustlkr:LT+30,pmforces:LB-30};let lx=0;
+  for(const [f,t] of CROSS){const A=by[f],B=by[t],ly=lanes[t];
+    const pts=`${A.dx},${A.dy} ${A.dx},${ly} ${B.dx},${ly} ${B.dx},${B.dy}`;
+    for(const cl of ['stripo','strip'])el('polyline',{points:pts,class:cl,'stroke-linejoin':'round'});
+    const lastFrom={x:B.dx,y:ly};arrow(svg,{x:B.dx,y:B.dy},lastFrom);
+    const mid=(A.dx+B.dx)/2;
+    el('text',{x:t==='hustlkr'?B.dx+10:mid,y:t==='hustlkr'?ly-8:ly+20,class:'t12 cross'},svg,f+' links to '+t);
+    lx=Math.max(lx,A.dx,B.dx>A.dx&&t==='hustlkr'?B.dx:0)}
+  const lg=legend(L,Math.max(420,lx+60),LT,LB);
+  // keep outer-corridor text above the legend box
+  build.state={L,rooms,by,lg,H};
+  buildSR();
+}
+function buildSR(){const ul=document.getElementById('sr');ul.textContent='';
+  for(const p of PROJECTS){const li=el('li',{},ul,'');
+    let t=`${p.project}: ${p.status}. URL ${p.url}.`+(p.reason?` Excluded, reason: ${p.reason}.`:'')+(p.note?` Note: ${p.note}`:'');
+    li.append(t);
+    if(p.pages.length){const u=el('ul',{},li);p.pages.forEach(q=>el('li',{},u,`${q.name}, ${q.auth?'login required, ':''}from ${q.src==='code'?'code':'site'}`));
+      if(p.links.length){const u2=el('ul',{},li);p.links.forEach(l=>el('li',{},u2,`${l[0]} links to ${l[1]}`))}}}
+  for(const [f,t] of CROSS)el('li',{},ul,`${f} links out to ${t}`)}
+
+/* ---------- panel ---------- */
+const panel=document.getElementById('panel');let lastRoom=null;
+function openPanel(p,g){
+  document.querySelectorAll('.room.sel').forEach(e=>e.classList.remove('sel'));g.classList.add('sel');lastRoom=g;
+  panel.textContent='';
+  const b=document.createElement('button');b.textContent='Close (Esc)';b.onclick=closePanel;panel.append(b);
+  const add=(tag,txt,cls)=>{const e=document.createElement(tag);e.textContent=txt;if(cls)e.className=cls;panel.append(e);return e};
+  add('h2',p.project);
+  add('p','URL (plain text): '+p.url);
+  add('p','Status: '+({live:'live',gated:'gated (login)',excluded:'excluded'}[p.status]),'st');
+  if(p.kind)add('p',p.kind);
+  if(p.reason)add('p','Excluded: '+p.reason);
+  if(p.note)add('p','Note: '+p.note);
+  if(p.pages.length){add('h3','Pages ('+p.pages.length+')');const u=document.createElement('ul');
+    p.pages.forEach(q=>{const li=document.createElement('li'),m=document.createElement('span');m.className='m';m.textContent=q.src==='code'?'c':'s';m.title=q.src==='code'?'from code':'from site';
+      const cd=document.createElement('code');cd.textContent=q.name;li.append(m,cd,(q.auth?' (login)':''));u.append(li)});panel.append(u);
+    add('p','c = from code, s = from live site');}
+  panel.hidden=false;b.focus();
+}
+function closePanel(){panel.hidden=true;document.querySelectorAll('.room.sel').forEach(e=>e.classList.remove('sel'));if(lastRoom)lastRoom.focus()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden)closePanel()});
+
+/* ---------- self-check (result in <html data-check>) ---------- */
+function selfCheck(){
+  const bad=[],{rooms,H,lg,L}=build.state;
+  const R=e=>({x:+e.getAttribute('x'),y:+e.getAttribute('y'),w:+e.getAttribute('width'),h:+e.getAttribute('height')});
+  const ov=(a,b)=>a.x<b.x+b.w&&b.x<a.x+a.w&&a.y<b.y+b.h&&b.y<a.y+a.h;
+  const inside=(bb,r,tol=0)=>bb.x>=r.x-tol&&bb.y>=r.y-tol&&bb.x+bb.width<=r.x+r.w+tol&&bb.y+bb.height<=r.y+r.h+tol;
+  if(H<=0)bad.push('H');
+  rooms.forEach(r=>{if(r.x<0||r.x+r.w>W||r.y<0||r.y+r.h>H)bad.push('room off canvas '+r.p.project)});
+  for(let i=0;i<rooms.length;i++)for(let j=i+1;j<rooms.length;j++)if(ov(rooms[i],rooms[j]))bad.push('overlap '+rooms[i].p.project+'/'+rooms[j].p.project);
+  for(const k in WINGS){const w=WINGS[k];w.items.forEach(r=>{if(!(r.x>=w.x&&r.x+r.w<=w.x+w.W&&r.y>=w.y&&r.y+r.h<=w.y+w.H))bad.push('room outside wing '+r.p.project)})}
+  const bb=e=>e.getBBox();
+  document.querySelectorAll('.room').forEach(g=>{const wall=R(g.querySelector('.wall')),own=[...g.children].filter(e=>e.tagName==='text');
+    const all=[...g.querySelectorAll('text')];
+    all.forEach(t=>{const cell=t.closest('.cell');const box=cell?R(cell.querySelector('.cellbox')):wall;if(!inside(bb(t),box,.5))bad.push('clip "'+t.textContent+'" in '+g.dataset.p);
+      const fs=parseFloat(getComputedStyle(t).fontSize);if(fs<12)bad.push('font<12 '+t.textContent)});
+    const tb=all.map(t=>[t,bb(t)]);for(let i=0;i<tb.length;i++)for(let j=i+1;j<tb.length;j++){const a=tb[i][1],b=tb[j][1];if(a.x<b.x+b.width&&b.x<a.x+a.width&&a.y<b.y+b.height&&b.y<a.y+a.height)bad.push('text overlap "'+tb[i][0].textContent+'"/"'+tb[j][0].textContent+'" in '+g.dataset.p)}
+    const cells=[...g.querySelectorAll('.cellbox')].map(R);for(let i=0;i<cells.length;i++){if(!inside({x:cells[i].x,y:cells[i].y,width:cells[i].w,height:cells[i].h},wall))bad.push('cell outside room '+g.dataset.p);for(let j=i+1;j<cells.length;j++)if(ov(cells[i],cells[j]))bad.push('cell overlap in '+g.dataset.p)}});
+  document.querySelectorAll('.wtt').forEach(t=>{const w=WINGS[Object.keys(WINGS).find(k=>WINGS[k].title===t.textContent)];if(!inside(bb(t),{x:w.x,y:w.y,w:w.W,h:w.H}))bad.push('wing title clip')});
+  // legend text and outer-corridor labels must stay inside the lobby and not touch the legend or each other
+  const lob=R(svg.querySelector('.lobby'));
+  svg.querySelectorAll('.lgt,.cross').forEach(t=>{if(!inside(bb(t),lob))bad.push('lobby text clip '+t.textContent)});
+  svg.querySelectorAll('.lg text,.lg g').forEach(t=>{const b=bb(t);if(b.x+b.width>lob.x+lob.w)bad.push('legend off lobby')});
+  const lt=[...svg.querySelectorAll('.lg')].map(bb),ct=[...svg.querySelectorAll('.cross')].map(bb);
+  ct.forEach(a=>lt.forEach(b=>{if(a.x<b.x+b.width&&b.x<a.x+a.width&&a.y<b.y+b.height&&b.y<a.y+a.height)bad.push('cross label hits legend')}));
+  // outer-corridor trunk from hustlkr's door down to the lobby must not cross another room
+  const hk=rooms.find(r=>r.p.project==='hustlkr');rooms.forEach(r=>{if(r!==hk&&hk.dx>r.x&&hk.dx<r.x+r.w&&r.y>hk.y+hk.h&&r.y<L.LT)bad.push('corridor crosses '+r.p.project)});
+  document.documentElement.dataset.check=bad.length?'FAIL '+bad.join(' | '):'OK';
+  document.documentElement.dataset.size=W+'x'+H;
+}
+build();selfCheck();
+</script>
+</body>
+</html>
